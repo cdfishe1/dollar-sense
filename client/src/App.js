@@ -1,4 +1,12 @@
 import React, { Component } from "react";
+import About from "./pages/About/About"
+import Home from "./pages/Home/Home"
+import Budget from "./pages/Budget/Budget"
+import Invest from "./pages/Invest/Invest"
+import Goals from "./pages/Goals/Goals"
+import Dashboard from "./pages/Dashboard/Dashboard"
+
+
 import logo from "./logo.svg";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -9,8 +17,8 @@ function App() {
     //Set up real routes
     <Router>
       {/* <Preloader load={load} /> */}
-      <div className="App" id={load ? "no-scroll" : "scroll"}>
-        <Navbar />
+      <div className="App">
+        {/* <Navbar /> */}
         {/* <ScrollToTop /> */}
         <Switch>
           <Route path="/" exact component={Home} />
@@ -20,7 +28,7 @@ function App() {
           <Route path="/invest" component={Invest} />
           <Route path="/goals" component={Goals} />
         </Switch>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </Router>
     
