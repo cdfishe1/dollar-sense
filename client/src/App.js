@@ -6,7 +6,6 @@ import Invest from "./pages/Invest/Invest"
 import Goals from "./pages/Goals/Goals"
 import Dashboard from "./pages/Dashboard/Dashboard"
 
-
 import logo from "./logo.svg";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
