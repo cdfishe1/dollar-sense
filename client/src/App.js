@@ -9,6 +9,11 @@ import Signup from "./komponent/Signup";
 import Login from "./komponent/Login";
 import ForgotPassword from "./komponent/ForgotPassword";
 import PrivateRoute from "./komponent/PrivateRoute";
+import Navbar from "./pages/Navbar";
+import Footer from "./pages/Footer"
+import "bootstrap/dist/css/bootstrap.min.css";
+
+
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import "./App.css";
@@ -18,6 +23,7 @@ import { AuthProvider } from "./contexts/Authcontext";
 function App() {
   return (
     //Set up real routes
+
 
     <div className="appWrapper">
       <Router>
@@ -36,6 +42,7 @@ function App() {
         </AuthProvider>
       </Router>
     </div>
+
   );
 }
 
