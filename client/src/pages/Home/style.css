@@ -1,0 +1,66 @@
+.backgroundImg {
+  background-image: url("/Assets/savings.jpg");
+}
+
+.aboutUs {
+  font-family: "Heebo", sans-serif;
+}
+
+.homeWrapper {
+  background-image: url("/assets/savings.png");
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
+
+#homeIntro {
+  font-size: 40pt;
+  margin-top: 50px;
+}
+
+.row {
+  margin-left: auto;
+}
+
+.homeBtn {
+  margin: 10px;
+  border-radius: 20px;
+  padding: 10px;
+  width: 400px;
+  font-weight: bold;
+  border: none;
+}
+
+.homeBtn:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+#home1 {
+  background-color: #74c69d;
+}
+
+#home2 {
+  background-color: lightgrey;
+}
+
+@media (max-width: 375px) {
+  #home1,
+  #home2 {
+    width: auto;
+  }
+
+  #homeIntro {
+    font-size: 30pt;
+  }
+}
+
+@media (max-width: 414px) {
+  #home1,
+  #home2 {
+    width: auto;
+  }
+  #homeIntro {
+    font-size: 30pt;
+  }
+}
