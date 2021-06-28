@@ -27,10 +27,8 @@
     "materialize-css": "^1.0.0-rc.2",
     "mongoose": "^5.12.14",
     "react-bootstrap": "^1.6.1",
-
     "react-icons": "^4.2.0",
     "react-materialize": "^3.9.8",
-
     "react-router-dom": "^5.2.0"
   }
 }
