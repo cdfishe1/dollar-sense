@@ -11,7 +11,7 @@ import ForgotPassword from "./komponent/ForgotPassword";
 import PrivateRoute from "./komponent/PrivateRoute";
 import Navbar from "./pages/Navbar";
 import Footer from "./pages/Footer"
-import "bootstrap/dist/css/bootstrap.min.css";
+//import "bootstrap/dist/css/bootstrap.min.css";
 
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
