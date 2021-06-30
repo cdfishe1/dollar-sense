@@ -12,3 +12,5 @@ const app = firebase.initializeApp({
 
 export const auth = app.auth();
 export default app;
+
+//const token = firebase.auth().currentUser.uid

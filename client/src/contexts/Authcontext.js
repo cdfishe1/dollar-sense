@@ -15,6 +15,8 @@ export function AuthProvider({ children }) {
   }
 
   function login(email, password) {
+    //const token = currentUser.uid;
+    //console.log(token);
     return auth.signInWithEmailAndPassword(email, password);
   }
 
@@ -29,6 +31,7 @@ export function AuthProvider({ children }) {
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       setCurrentUser(user);
+
       setLoading(false);
     });
     return unsubscribe;
