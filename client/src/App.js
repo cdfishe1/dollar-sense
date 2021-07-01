@@ -5,13 +5,15 @@ import Budget from "./pages/Budget/Budget";
 import Invest from "./pages/Invest/Invest";
 import Goals from "./pages/Goals/Goals";
 import Dashboard from "./pages/Dashboard/Dashboard";
-import Signup from "./komponent/Signup";
-import Login from "./komponent/Login";
-import ForgotPassword from "./komponent/ForgotPassword";
+import Signup from "./komponent/Signup/Signup";
+import Login from "./komponent/Login/Login";
+import ForgotPassword from "./komponent/Forgotpass/ForgotPassword";
 import PrivateRoute from "./komponent/PrivateRoute";
 import Navbar from "./pages/Navbar";
 import Footer from "./pages/Footer"
 import "bootstrap/dist/css/bootstrap.min.css";
+
+
 
 import logo from "./logo.svg";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -23,7 +25,6 @@ import { AuthProvider } from "./contexts/Authcontext";
 function App() {
   return (
     //Set up real routes
-
 
     <div className="appWrapper">
       <Router>
@@ -45,7 +46,6 @@ function App() {
         <Footer />
       </Router>
     </div>
-
   );
 }
 

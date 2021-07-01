@@ -1,28 +1,130 @@
-# Create React Express App
-## About This Boilerplate
+[![Generic badge](https://img.shields.io/badge/license-MIT-<COLOR>.svg)](#license)
+![GitHub language count](https://img.shields.io/github/languages/count/cdfishe1/dollar-sense)
+![GitHub top language](https://img.shields.io/github/languages/top/cdfishe1/dollar-sense)
 
-This setup allows for a Node/Express/React app which can be easily deployed to Heroku.
+# dollarSense
 
-The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
+An app built on React to help young people learn financial literacy and budgeting.
 
-## Starting the app locally
+## Created by
 
-Start by installing front and backend dependencies. While in this directory, run the following command:
+- [Natalie Finnegan](https://github.com/nfinnegan)
+- [Charles Fisher](https://github.com/cdfishe1)
+- [Javiann Marrero](https://github.com/javiistacks)
+
+## Table of Contents
+
+- [User Story](#user-story)
+- [dollarSense Demos](#dollarSense)
+- [Deployment](#deployment)
+- [Installation](#installation)
+- [Challenges and Successes](#challenges-and-successes)
+- [Directions for Future Development](#directions-for-future-development)
+- [Credits](#credits)
+- [Special Thanks](#special-thanks)
+- [License](#license)
+
+## User Story
 
 ```
-npm install
-```
-
-This should install node modules within the server and the client folder.
-
-After both installations complete, run the following command in your terminal:
+As a user
+I want to be able to learn how to save money and invest money.
+So that, I can get familiar with real world responsibilities I will have as an adult.
 
 ```
-npm start
+
+## Acceptance Criteria
+
+```
+GIVEN a financial education website
+When I go to the application, I’m brought to the homepage and there will be an informational introduction of what our website is about.
+Then when I hit login I am prompted to enter my credentials, or if I select sign up I am presented with a signup form. 
+Then once either is complete a user will be shows a “success” message 
+Then when I am logged in or have successfully sign up, I am brought to my personal dashboard that shows me an overview of my achievements 
+That dashboard will have 3 tabs or views for goal setting, budgeting, and investing.
+
 ```
 
-Your app should now be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
+## dollarSense Demos
 
-## Deployment (Heroku)
+### Screencast on wide screen
 
-To deploy, simply add and commit your changes, and push to Heroku. As is, the NPM scripts should take care of the rest.
+
+
+### Screencast on mobile
+
+
+
+## Deployment
+
+Site deployed at [dollarSense](https://dollar-sense.herokuapp.com/)
+
+## Installation
+
+This app uses the following dependencies:
+
+- [bootstrap](https://www.npmjs.com/package/bcrypt)
+- [chart.js](https://www.npmjs.com/package/chart.js)
+- [dotenv](https://www.npmjs.com/package/dotenv)
+- [express](https://www.npmjs.com/package/express)
+- [firebase](https://www.npmjs.com/package/firebase)
+- [if-env](https://www.npmjs.com/package/if-env)
+- [mongoose](https://www.npmjs.com/package/mongoose)
+- [react](https://www.npmjs.com/package/react)
+- [react-dom](https://www.npmjs.com/package/react-dom)
+- [react icons](https://www.npmjs.com/package/react-icons)
+- [react-router-dom](https://www.npmjs.com/package/react-router-dom)
+- [react-script-tag](https://www.npmjs.com/package/react-script-tag)
+- [react-scripts](https://www.npmjs.com/package/react-scripts)
+
+
+### Installation Instructions
+
+- In order to install this app please run npm install on the command line in node.js.
+- You can use the .env.EXAMPLE file to input your specific information for the working .env file.
+- If deploying to Heroku you will need to hook your MongoDB cluster to the webserver via Mongo Atlas.
+
+
+## Challenges and Successes
+
+- Having components use external javascripts was a challenge. We used React Script Tag to overcome this.
+- Integrating Bootstrap into the React archiecture was sometimes challenging.
+
+## Directions for Future Development
+
+
+## Special Thanks
+
+- Irwin Marcano, bootcamp TA, helped us diagnose external javascript issues in React.
+
+## License
+
+Copyright (c) Natalie Finnegan, Charles Fisher, Javiann Marrero. All rights reserved.<br>
+Please be kind and change content if you wish to use this code.
+
+<details><summary>Licensed under the MIT License</summary>
+
+Copyright (c) 2021 - present | Charles Fisher, Natalie Finnegan, Diego Villarreal
+
+<blockquote>
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+</blockquote>
+</details>
+

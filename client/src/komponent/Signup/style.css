@@ -1,0 +1,26 @@
+.signUpPage {
+  font-family: "Heebo", sans-serif;
+}
+
+.signUpCard {
+  background-color: #e9ecef;
+  border-radius: 20px;
+  border: none;
+}
+
+.card {
+  border: none;
+}
+
+.signUpBtn {
+  border-radius: 20px;
+  padding: 10px;
+  font-weight: bold;
+  border: none;
+  background-color: #74c69d;
+}
+
+.signUpBtn:hover {
+  cursor: pointer;
+  color: white;
+}

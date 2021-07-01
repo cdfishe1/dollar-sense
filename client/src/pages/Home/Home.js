@@ -10,6 +10,9 @@ const Home = () => {
       <div className="row container aboutUs">
         <div className="col-7">
           <h1 id="homeIntro">Helping You Reach Financial Independence</h1>
+          <p>
+            <i>It's never too early to start...</i>
+          </p>
         </div>
         {/* <div className="col-4">
           <p>Helping You Reach Financial Independence</p>

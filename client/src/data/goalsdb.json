@@ -1,0 +1,25 @@
+{
+  "goals": [
+    {
+      "id": 1,
+      "title": "Rainy Day",
+      "amount": 200,
+      "emoji": "☔️",
+      "saveBy": "7/31"
+    },
+    {
+      "id": 2,
+      "title": "Shopping",
+      "amount": 100,
+      "emoji": "👗",
+      "saveBy": "7/15"
+    },
+    {
+      "id": 3,
+      "title": "Car",
+      "amount": 200,
+      "emoji": "🚗",
+      "saveBy": "8/01"
+    }
+  ]
+}
