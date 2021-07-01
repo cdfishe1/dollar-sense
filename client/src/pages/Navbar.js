@@ -6,6 +6,7 @@ import logo from "../Assets/logo2.png";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import { CgGitFork } from "react-icons/cg";
+import { useAuth } from "../contexts/Authcontext";
 import {
   AiFillStar,
   AiOutlineHome,
@@ -18,6 +19,7 @@ import { CgFileDocument } from "react-icons/cg";
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
+  const { currentUser, logout } = useAuth();
 
   function scrollHandler() {
     if (window.scrollY >= 20) {
@@ -32,7 +34,7 @@ function NavBar() {
   return (
     <Navbar
       expanded={expand}
-      fixed="top"
+      fixed="middle"
       expand="md"
       className={navColour ? "sticky" : "navbar"}
     >
@@ -88,6 +90,16 @@ function NavBar() {
               </Nav.Link>
             </Nav.Item>
 
+            <Nav.Item>
+              <Nav.Link
+                as={Link}
+                to="/dashboard"
+                onClick={() => updateExpanded(false)}
+              >
+                <CgFileDocument style={{ marginBottom: "2px" }} /> Dashboard
+              </Nav.Link>
+            </Nav.Item>
+
             <Nav.Item className="fork-btn">
               <Button
                 href="https://github.com/cdfishe1/dollar-sense"
@@ -99,6 +111,11 @@ function NavBar() {
               </Button>
             </Nav.Item>
           </Nav>
+          
+        {/* <Navbar.Text>
+      Signed in as: <a href="/login"> {currentUser.email} {logout} </a>
+      </Navbar.Text> */}
+
         </Navbar.Collapse>
       </Container>
     </Navbar>
