@@ -10,8 +10,10 @@ import Login from "./komponent/Login/Login";
 import ForgotPassword from "./komponent/Forgotpass/ForgotPassword";
 import PrivateRoute from "./komponent/PrivateRoute";
 import Navbar from "./pages/Navbar";
-import Footer from "./pages/Footer";
-//import "bootstrap/dist/css/bootstrap.min.css";
+import Footer from "./pages/Footer"
+import "bootstrap/dist/css/bootstrap.min.css";
+
+
 
 import logo from "./logo.svg";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -26,7 +28,9 @@ function App() {
 
     <div className="appWrapper">
       <Router>
+      
         <AuthProvider>
+        <Navbar/>
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/signup" component={Signup} />
@@ -39,6 +43,7 @@ function App() {
             <Route path="/goals" component={Goals} />
           </Switch>
         </AuthProvider>
+        <Footer />
       </Router>
     </div>
   );
