@@ -1,3 +1,4 @@
 module.exports = {
-    Transaction: require('./transaction')
+  Transaction: require("./transaction"),
+  Goals: require("./goals"),
 };

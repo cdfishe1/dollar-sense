@@ -6,3 +6,43 @@
 .goals {
   background-color: #f8f9fa;
 }
+
+.goalInput {
+  margin: 5px;
+  width: -webkit-fill-available;
+}
+
+#amountTitle,
+#dateTitle {
+  margin-top: 5px;
+}
+
+.addGoalBtn {
+  margin: 10px;
+  font-family: "Heebo", sans-serif;
+  border-radius: 20px;
+  padding: 10px;
+  background-color: #74c69d;
+  font-weight: bold;
+  border: none;
+  width: auto;
+}
+
+.saveGoalBtn {
+  background-color: #74c69d;
+  font-family: "Heebo", sans-serif;
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+}
+.closeModalBtn {
+  font-family: "Heebo", sans-serif;
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+  background-color: lightgrey;
+}
+
+#addGoalModal {
+  font-family: "Heebo", sans-serif;
+}

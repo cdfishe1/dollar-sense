@@ -97,6 +97,7 @@ function sendTransaction(isAdding) {
   let transaction = {
     name: nameEl.value,
     value: amountEl.value,
+    
     date: new Date().toISOString()
   };
 
@@ -145,10 +146,10 @@ function sendTransaction(isAdding) {
   });
 }
 
-document.querySelector("#add-btn").onclick = function() {
-  sendTransaction(true);
-};
+// document.querySelector("#add-btn").onclick = function() {
+//   sendTransaction(true);
+// };
 
-document.querySelector("#sub-btn").onclick = function() {
-  sendTransaction(false);
-};
+// document.querySelector("#sub-btn").onclick = function() {
+//   sendTransaction(false);
+// };
