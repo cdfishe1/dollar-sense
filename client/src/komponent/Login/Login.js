@@ -1,9 +1,10 @@
 import React, { useRef, useState } from "react";
-import { Card, Form, Button, Alert, Container } from "react-bootstrap";
+import { Card, Form, Alert, Container } from "react-bootstrap";
 import { useAuth } from "../../contexts/Authcontext";
 import { Link, useHistory } from "react-router-dom";
 import "./style.css";
 import Header from "../Header/Header";
+import { auth } from "../../Firebase";
 
 const Login = () => {
   const emailRef = useRef();
@@ -12,6 +13,7 @@ const Login = () => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const history = useHistory();
+  //const [currentUser, setCurrentUser] = useState();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -20,6 +22,8 @@ const Login = () => {
       setError("");
       setLoading(true);
       await login(emailRef.current.value, passwordRef.current.value);
+      const token = auth.uid;
+      console.log(token);
       history.push("/dashboard");
     } catch {
       setError("Failed to sign in!");

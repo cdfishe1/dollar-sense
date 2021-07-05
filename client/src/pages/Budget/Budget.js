@@ -1,48 +1,95 @@
-import React from 'react'
+import React, { useState } from "react";
 import "./budget.css";
-import ScriptTag from 'react-script-tag';
+//import ScriptTag from "react-script-tag";
+import { auth } from "../../Firebase";
 
+const Budget = () => {
+  const [tName, setTName] = useState("");
+  const [amount, setAmount] = useState(0.0);
 
+  const addBtn = () => {
+    let transaction = {
+      name: tName,
+      value: amount,
+      userID: auth.currentUser.uid,
+      date: new Date().toISOString(),
+    };
 
-const Budget = () => { 
-    
+    console.log(transaction);
 
-    return (
-    
+    fetch("/api/transaction", {
+      method: "POST",
+      body: JSON.stringify(transaction),
+      headers: {
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+      },
+    }).then((response) => {
+      console.log(response);
+      return response.json();
+    });
+  };
+
+  return (
     <div className="wrapper">
-    <div className="total">
-      <div className="total">Your total is: $<span id="total">0</span></div>
-    </div>
+      <div className="total">
+        <div className="total">
+          Your total is: $<span id="total">0</span>
+        </div>
+      </div>
 
-    <div className="form">
-      <input type="text" id="t-name" placeholder="Name of transaction" />
-      <input type="number" min="0" id="t-amount" placeholder="Transaction amount" />
-      <button id="add-btn"><i className="fa fa-plus buttons"></i> Add Funds</button>
-      <button id="sub-btn"><i className="fa fa-minus"></i> Subtract Funds</button>
-      <p className="error"></p>
-    </div>
+      <div className="form">
+        <input
+          type="text"
+          id="t-name"
+          onChange={(e) => {
+            setTName(e.target.value);
+          }}
+          placeholder="Name of transaction"
+        />
+        <input
+          type="number"
+          min="0"
+          id="t-amount"
+          onChange={(e) => {
+            setAmount(e.target.value);
+          }}
+          placeholder="Transaction amount"
+        />
+        <button
+          id="add-btn"
+          onClick={() => {
+            addBtn();
+          }}
+        >
+          <i className="fa fa-plus buttons"></i> Add Funds
+        </button>
+        <button id="sub-btn">
+          <i className="fa fa-minus"></i> Subtract Funds
+        </button>
+        <p className="error"></p>
+      </div>
 
-    <div className="transactions">
-      <table>
-        <thead>
+      <div className="transactions">
+        <table>
+          <thead>
             <tr>
-          <th>Transaction</th>
-          <th>Amount</th>
-          </tr>
-        </thead>
-        <tbody id="tbody">
-          
-        </tbody>
-      </table>
+              <th>Transaction</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+
+      <canvas id="myChart"></canvas>
+      {/* <ScriptTag type="text/javascript" src="./scripts/budgetScript.js" />
+      <ScriptTag
+        type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"
+      /> */}
     </div>
-    
-    <canvas id="myChart"></canvas>
-    <ScriptTag type="text/javascript" src="./scripts/budgetScript.js" />
-    <ScriptTag type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0" />
-  </div>
+  );
+};
 
-  
-    )
-}
-
-export default Budget
+export default Budget;

@@ -15,8 +15,6 @@ export function AuthProvider({ children }) {
   }
 
   function login(email, password) {
-    //const token = currentUser.uid;
-    //console.log(token);
     return auth.signInWithEmailAndPassword(email, password);
   }
 
