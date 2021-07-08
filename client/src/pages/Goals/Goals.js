@@ -50,16 +50,16 @@ const Goals = () => {
     });
   };
 
-  const getGoals = () => {
-    fetch("/api/all-goals")
-      .then((response) => {
-        console.log(response);
-        response.json;
-      })
-      .then((data) => {
-        const goals = data;
-      });
-  };
+  // const getGoals = () => {
+  //   fetch("/api/all-goals")
+  //     .then((response) => {
+  //       console.log(response);
+  //       response.json;
+  //     })
+  //     .then((data) => {
+  //       const goals = data;
+  //     });
+  // };
 
   const goals = db.goals;
   return (
