@@ -1,8 +1,9 @@
 const router = require("express").Router();
 const Transaction = require("../models/transaction.js");
 const Goals = require("../models/goals");
-//import { auth } from "../../Firebase";
-//const auth = require("../");
+//const Firebase = require("../client/src/Firebase")
+//import firebase, { auth } from "../client/src/Firebase.js";
+//const { auth } = require("../client/src/Firebase.js");
 
 router.post("/api/transaction", ({ body }, res) => {
   Transaction.create(body)
@@ -26,11 +27,13 @@ router.post("/api/new-goal", ({ body }, res) => {
     });
 });
 
-router.get("/api/all-goals", (req,res)=>{
-  Goals.find({
-    
-  })
-})
+router.get("/api/all-goals/:userID", (req, res) => {
+  console.log("line 31", req.params);
+  console.log(typeof req.params);
+  const { userID } = req.params;
+  console.log(typeof userID);
+  Goals.find({ userID: userID }).then((data) => res.json(data));
+});
 
 // router.post("/api/transaction/bulk", ({ body }, res) => {
 //   Transaction.insertMany(body)
