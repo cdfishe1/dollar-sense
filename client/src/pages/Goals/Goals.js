@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import db from "../../data/goalsdb.json";
+//import db from "../../data/goalsdb.json";
 import Goal from "../../komponent/Goal/Goal";
 import Header from "../../komponent/Header/Header";
 import "./style.css";
@@ -13,6 +13,11 @@ const Goals = () => {
   const [saveByDate, setSaveByDate] = useState("");
   const [goalEmoji, setGoalEmoji] = useState("");
   const [isLoading, setLoading] = useState(false);
+  const [goals, setGoals] = useState([]);
+
+  useEffect(() => {
+    getAllGoals();
+  }, []);
 
   const newGoalBtn = () => {
     console.log("checkingBtn");
@@ -50,18 +55,16 @@ const Goals = () => {
     });
   };
 
-  // const getGoals = () => {
-  //   fetch("/api/all-goals")
-  //     .then((response) => {
-  //       console.log(response);
-  //       response.json;
-  //     })
-  //     .then((data) => {
-  //       const goals = data;
-  //     });
-  // };
+  const getAllGoals = () => {
+    fetch(`/api/all-goals/${auth.currentUser.uid}`).then((res) => {
+      //setGoals(data);
+      // goals = getGoals;
+      console.log("line67", res.data);
+    });
+  };
 
-  const goals = db.goals;
+  //let goals = [];
+  let test = [];
   return (
     <div className="goals">
       <Header />
@@ -69,7 +72,7 @@ const Goals = () => {
         <h1 className="container" id="goalsPageTitle">
           Here's what you're saving for:
         </h1>
-        {goals.map((goal) => {
+        {test.map((goal) => {
           return (
             <Goal
               key={goal.id}
