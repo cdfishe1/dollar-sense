@@ -11,7 +11,7 @@ const Budget = () => {
   let transactions = useRef();
 
   useEffect(() => {
-    fetch("/api/transaction")
+    fetch(`/api/transaction/${auth.currentUser.uid}`)
       .then((response) => {
         return response.json();
       })

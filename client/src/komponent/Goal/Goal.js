@@ -12,14 +12,13 @@ const Goals = ({ id, title, emoji, amount, saveBy, onDelete }) => {
     return convertedDate;
   };
 
-  // const daysLeftToSave = (formatDate, date) => {
+  // const daysLeftToSave = (date) => {
+  //   let convertedDate = `${new Date(date).getMonth() + 1}/${
+  //     new Date(date).getDate() + 1
+  //   }/${new Date(date).getFullYear()}`;
   //   let currentDate = new Date().toLocaleDateString();
-  //   let daysLeft = date - currentDate;
+  //   let daysLeft = convertedDate - currentDate;
   //   console.log(daysLeft);
-  // };
-
-  // const deleteGoal = (id) => {
-  //   console.log("delete", id);
   // };
 
   let currentDate = new Date().toLocaleDateString();
@@ -47,7 +46,7 @@ const Goals = ({ id, title, emoji, amount, saveBy, onDelete }) => {
               </p>
               <p className="card-text">
                 <strong>Days Left to Save:</strong>
-                {formatDate(saveBy) - currentDate}
+                {daysLeftToSave()}
               </p>
             </div>
           </Card.Body>
