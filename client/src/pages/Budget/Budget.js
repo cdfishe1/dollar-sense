@@ -3,75 +3,72 @@ import "./budget.css";
 // import ScriptTag from "react-script-tag";
 import { auth } from "../../Firebase";
 
-
-
 const Budget = () => {
   const [tName, setTName] = useState("");
   const [amount, setAmount] = useState(0.0);
+  const [allTransactions, setTransactions] = useState("");
   // let transactions = useRef(null);
   let transactions = useRef();
-  
 
   useEffect(() => {
-    
     fetch("/api/transaction")
-    .then(response => {
-      return response.json();
-    })
-    .then(data => {
-      // save db data on global variable
-      transactions = data;
+      .then((response) => {
+        return response.json();
+      })
+      .then(
+        (data) => {
+          // save db data on global variable
+          transactions = data;
+          setTransactions(transactions);
+          populateTotal();
+          populateTable();
+          // populateChart();
+        },
+        [allTransactions]
+      );
 
-      populateTotal();
-      populateTable();
-      // populateChart();
+    function populateTotal() {
+      // reduce transaction amounts to a single total value
+      let total = transactions.reduce((total, t) => {
+        return total + parseInt(t.value);
+      }, 0);
 
-      
-}, []);
+      let totalEl = document.querySelector("#total");
+      totalEl.textContent = total;
+    }
 
-  function populateTotal() {
-    // reduce transaction amounts to a single total value
-    let total = transactions.reduce((total, t) => {
-      return total + parseInt(t.value);
-    }, 0);
+    function populateTable() {
+      let tbody = document.querySelector("#tbody");
+      tbody.innerHTML = "";
 
-    let totalEl = document.querySelector("#total");
-    totalEl.textContent = total;
-  }
-
-  function populateTable() {
-    let tbody = document.querySelector("#tbody");
-    tbody.innerHTML = "";
-
-    transactions.forEach(transaction => {
-      // create and populate a table row
-      let tr = document.createElement("tr");
-      tr.innerHTML = `
+      transactions.forEach((transaction) => {
+        // create and populate a table row
+        let tr = document.createElement("tr");
+        tr.innerHTML = `
         <td>${transaction.name}</td>
         <td>${transaction.value}</td>
       `;
 
-      tbody.appendChild(tr);
-    });
-  }
+        tbody.appendChild(tr);
+      });
+    }
 
-  function populateTable() {
-    let tbody = document.querySelector("#tbody");
-    tbody.innerHTML = "";
+    function populateTable() {
+      let tbody = document.querySelector("#tbody");
+      tbody.innerHTML = "";
 
-    transactions.forEach(transaction => {
-      // create and populate a table row
-      let tr = document.createElement("tr");
-      tr.innerHTML = `
+      transactions.forEach((transaction) => {
+        // create and populate a table row
+        let tr = document.createElement("tr");
+        tr.innerHTML = `
         <td>${transaction.name}</td>
         <td>${transaction.value}</td>
       `;
 
-      tbody.appendChild(tr);
-    });
-  }
+        tbody.appendChild(tr);
+      });
+    }
   });
-  
 
   const addBtn = () => {
     let transaction = {
@@ -149,8 +146,7 @@ const Budget = () => {
       </div>
 
       <canvas id="myChart"></canvas>
-      
-      
+
       {/* <ScriptTag type="text/javascript" src="./scripts/budgetScript.js" /> */}
       {/* <ScriptTag
         type="text/javascript"
