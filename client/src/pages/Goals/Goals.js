@@ -27,7 +27,6 @@ const Goals = () => {
     setChosenEmoji(emojiObject);
     const { emoji } = emojiObject;
     setGoalEmoji(emoji);
-    console.log(emojiObject, emoji);
   };
 
   const saveGoalBtn = () => {
@@ -39,7 +38,6 @@ const Goals = () => {
       emoji: goalEmoji,
     };
     setLoading(true);
-    console.log(newGoal);
 
     fetch("/api/new-goal", {
       method: "POST",
@@ -50,7 +48,6 @@ const Goals = () => {
       },
     })
       .then((response) => {
-        console.log(response);
         setLoading(false);
         return response.json();
       })
