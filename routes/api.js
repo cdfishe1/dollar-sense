@@ -28,11 +28,20 @@ router.post("/api/new-goal", ({ body }, res) => {
 });
 
 router.get("/api/all-goals/:userID", (req, res) => {
-  console.log("line 31", req.params);
-  console.log(typeof req.params);
   const { userID } = req.params;
-  console.log(typeof userID);
-  Goals.find({ userID: userID }).then((data) => res.json(data));
+
+  Goals.find({ userID: userID }).then((data) => {
+    res.json(data);
+    console.log(data);
+  });
+});
+
+router.delete("/api/delete-goal/:id", (req, res) => {
+  const { id } = req.params;
+
+  Goals.findByIdAndDelete({ _id: id })
+    .then(() => console.log("done"))
+    .catch((err) => console.log(err));
 });
 
 // router.post("/api/transaction/bulk", ({ body }, res) => {

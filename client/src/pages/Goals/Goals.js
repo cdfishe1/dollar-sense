@@ -17,7 +17,7 @@ const Goals = () => {
 
   useEffect(() => {
     getAllGoals();
-  }, []);
+  }, [goals]);
 
   const newGoalBtn = () => {
     console.log("checkingBtn");
@@ -33,7 +33,7 @@ const Goals = () => {
   const saveGoalBtn = () => {
     let newGoal = {
       title: goalName,
-      value: goalAmount,
+      amount: goalAmount,
       userID: auth.currentUser.uid,
       saveBy: saveByDate,
       emoji: goalEmoji,
@@ -48,23 +48,37 @@ const Goals = () => {
         Accept: "application/json, text/plain, */*",
         "Content-Type": "application/json",
       },
-    }).then((response) => {
-      console.log(response);
-      setLoading(false);
-      return response.json();
-    });
+    })
+      .then((response) => {
+        console.log(response);
+        setLoading(false);
+        return response.json();
+      })
+      .catch((err) => console.log(err));
   };
 
   const getAllGoals = () => {
-    fetch(`/api/all-goals/${auth.currentUser.uid}`).then((res) => {
-      //setGoals(data);
-      // goals = getGoals;
-      console.log("line67", res.data);
-    });
+    fetch(`/api/all-goals/${auth.currentUser.uid}`)
+      .then((response) => response.json())
+      .then((data) => {
+        setGoals(data);
+      })
+      .catch((err) => console.log(err));
   };
 
-  //let goals = [];
-  let test = [];
+  const deleteGoal = (id) => {
+    console.log("delete", id);
+    fetch("api/delete-goal/" + id, {
+      method: "DELETE",
+      headers: {
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json)
+      .then(() => console.log(id, "deleted"));
+  };
+
   return (
     <div className="goals">
       <Header />
@@ -72,15 +86,18 @@ const Goals = () => {
         <h1 className="container" id="goalsPageTitle">
           Here's what you're saving for:
         </h1>
-        {test.map((goal) => {
+        {goals.map((goal) => {
           return (
-            <Goal
-              key={goal.id}
-              title={goal.title}
-              amount={goal.amount}
-              emoji={goal.emoji}
-              saveBy={goal.saveBy}
-            />
+            <div key={goal._id}>
+              <Goal
+                key={goal._id}
+                title={goal.title}
+                amount={goal.amount}
+                emoji={goal.emoji}
+                saveBy={goal.saveBy}
+                onDelete={() => deleteGoal(goal._id)}
+              />
+            </div>
           );
         })}
       </div>
@@ -191,6 +208,7 @@ const Goals = () => {
                       saveGoalBtn();
                     }}
                     className="saveGoalBtn"
+                    data-dismiss="modal"
                   >
                     Save Goal
                   </button>
