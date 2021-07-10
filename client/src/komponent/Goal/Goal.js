@@ -46,7 +46,7 @@ const Goals = ({ id, title, emoji, amount, saveBy, onDelete }) => {
               </p>
               <p className="card-text">
                 <strong>Days Left to Save:</strong>
-                {daysLeftToSave()}
+                {/* {daysLeftToSave()} */}
               </p>
             </div>
           </Card.Body>
