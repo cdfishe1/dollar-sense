@@ -70,13 +70,17 @@ const Budget = () => {
     }
   });
 
-  const addBtn = () => {
+  const addBtn = (isAdding) => {
     let transaction = {
       name: tName,
       value: amount,
       userID: auth.currentUser.uid,
       date: new Date().toISOString(),
     };
+
+    if (!isAdding) {
+      transaction.value *= -1;
+    }
 
     console.log(transaction);
 
@@ -90,7 +94,7 @@ const Budget = () => {
     }).then((response) => {
       console.log(response);
       return response.json();
-    });
+    })
   };
 
   return (
@@ -122,12 +126,15 @@ const Budget = () => {
         <button
           id="add-btn"
           onClick={() => {
-            addBtn();
+            addBtn(true);
           }}
         >
           <i className="fa fa-plus buttons"></i> Add Funds
         </button>
-        <button id="sub-btn">
+        <button id="sub-btn"
+        onClick={() => {
+          addBtn(false);
+        }}>
           <i className="fa fa-minus"></i> Subtract Funds
         </button>
         <p className="error"></p>
