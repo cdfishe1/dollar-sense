@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./budget.css";
-//import ScriptTag from "react-script-tag";
+// import ScriptTag from "react-script-tag";
 import { auth } from "../../Firebase";
 
 
@@ -71,7 +71,6 @@ const Budget = () => {
     });
   }
   });
-
   
 
   const addBtn = () => {
@@ -150,8 +149,10 @@ const Budget = () => {
       </div>
 
       <canvas id="myChart"></canvas>
-      {/* <ScriptTag type="text/javascript" src="./scripts/budgetScript.js" />
-      <ScriptTag
+      
+      
+      {/* <ScriptTag type="text/javascript" src="./scripts/budgetScript.js" /> */}
+      {/* <ScriptTag
         type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"
       /> */}
