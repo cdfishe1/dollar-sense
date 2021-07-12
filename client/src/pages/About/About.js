@@ -1,9 +1,16 @@
 import React from 'react'
+import Header from "../../komponent/Header/Header";
+import AboutCarousel from '../../komponent/Carousel/AboutCarousel';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const About = () => {
+    
+
     return (
         <div>
-            <h1>This is what Dollar Sense is about.</h1>
+            <Header />
+            <AboutCarousel />
         </div>
     )
 }
