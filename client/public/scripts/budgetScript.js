@@ -1,5 +1,5 @@
 // import {Chart} from "chart.js";
-let transactions = [];
+// let transactions = [];
 let myChart;
 
 // fetch("/api/transaction")

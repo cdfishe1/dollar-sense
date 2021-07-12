@@ -40,7 +40,7 @@ function App() {
             <PrivateRoute path="/goals" component={Goals} />
           </Switch>
         </AuthProvider>
-        <Footer />
+        {/* <Footer /> */}
       </Router>
     </div>
   );
