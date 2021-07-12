@@ -21,6 +21,10 @@ const Goals = () => {
 
   const newGoalBtn = () => {
     console.log("checkingBtn");
+    setGoalName("");
+    setGoalAmount(0.0);
+    setSaveByDate("");
+    setChosenEmoji(null);
   };
 
   const onEmojiClick = (e, emojiObject) => {
@@ -80,9 +84,16 @@ const Goals = () => {
     <div className="goals">
       <Header />
       <div>
-        <h1 className="container" id="goalsPageTitle">
-          Here's what you're saving for:
-        </h1>
+        {goals && (
+          <h1 className="container" id="goalsPageTitle">
+            Goals Detailed Overview:
+          </h1>
+        )}
+        {goals === [] && (
+          <h1 className="container" id="goalsPageTitle">
+            No Goals Yet, Let's Get Started!{" "}
+          </h1>
+        )}
         {goals.map((goal) => {
           return (
             <div key={goal._id}>
