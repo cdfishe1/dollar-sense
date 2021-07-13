@@ -22,3 +22,12 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 25vh;
+}
+.content-wrap {
+  flex: 1;
+}

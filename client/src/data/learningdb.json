@@ -1,0 +1,31 @@
+{
+    "learnings": [
+
+      // investing tips
+      {
+        "id": "Investing Tip",
+        "title": "Don't Chase a Hot Tip",
+        "news": "Regardless of the source, never accept a stock tip as valid. Always do your own analysis on a company before investing your hard-earned money.",
+        "source": "https://www.investopedia.com/articles/00/082100.asp",
+        "date": "December 22, 2020"
+      },
+
+      // savings tips
+      {
+        "id": "Savings Tip",
+        "title": "Pay Yourself First",
+        "news": "Set up an auto debit from your checking account to your savings account each payday. Whether it's $50 every two weeks or $500, don't cheat yourself out of a healthy long-term savings plan.",
+        "source": "https://www.regions.com/Insights/Personal/Personal-Finances/budgeting-and-saving/10-Best-Ways-to-Save-Money",
+        "date": "2021"
+      },
+
+      // credit tips
+      {
+        "id": "Credit Tip",
+        "title": "Pay bills on time",
+        "news": "Payment history is the single biggest factor that affects credit scores, and late payments can stay on your credit reports for 7½ years.",
+        "source": "https://www.nerdwallet.com/article/finance/raise-credit-score-fast",
+        "date": "Apr 22, 2021"
+      }
+    ]
+  }
