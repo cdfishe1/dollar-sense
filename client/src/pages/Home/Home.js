@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <div className="homeWrapper">
-      <Header />
+      
       <div className="row container aboutUs">
         <div className="col-7">
           <h1 id="homeIntro">Helping You Reach Financial Independence</h1>

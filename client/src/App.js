@@ -2,6 +2,7 @@ import React from "react";
 import About from "./pages/About/About";
 import Home from "./pages/Home/Home";
 import Budget from "./pages/Budget/Budget";
+import Learning from "./komponent/Learning/Learning";
 import Invest from "./pages/Invest/Invest";
 import Goals from "./pages/Goals/Goals";
 import Dashboard from "./pages/Dashboard/Dashboard";
@@ -9,8 +10,8 @@ import Signup from "./komponent/Signup/Signup";
 import Login from "./komponent/Login/Login";
 import ForgotPassword from "./komponent/Forgotpass/ForgotPassword";
 import PrivateRoute from "./komponent/PrivateRoute";
-import Navbar from "./pages/Navbar";
-import Footer from "./pages/Footer"
+import Navbar from "./komponent/Navbar/_Navbar";
+// import Footer from "./komponent/Footer/footer2"
 import "bootstrap/dist/css/bootstrap.min.css";
 
 
@@ -41,9 +42,10 @@ function App() {
             <Route path="/budget" component={Budget} />
             <Route path="/invest" component={Invest} />
             <Route path="/goals" component={Goals} />
+            <Route path="/learning" component={Learning} />
           </Switch>
         </AuthProvider>
-        <Footer />
+        {/* <Footer /> */}
       </Router>
     </div>
   );

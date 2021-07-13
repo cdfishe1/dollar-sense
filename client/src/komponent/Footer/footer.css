@@ -1,0 +1,18 @@
+.main-footer {
+    color: white;
+    background-color: blue;
+    padding: 5px 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 10px;
+}
+.content-wrap {
+  flex: 1;
+}
