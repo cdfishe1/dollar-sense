@@ -1,12 +1,15 @@
 .goalsCard {
   font-family: "Heebo", sans-serif;
   margin: 25px;
-  border-left-color: green;
-  border-left: solid;
+
 }
 
 .goalTitle {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.goalBody{
+  border-left: solid green;
 }

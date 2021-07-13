@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Card, Container } from "react-bootstrap";
 import "./style.css";
 import { FaTimes } from "react-icons/fa";
@@ -12,24 +12,23 @@ const Goals = ({ id, title, emoji, amount, saveBy, onDelete }) => {
     return convertedDate;
   };
 
-  // const daysLeftToSave = (formatDate, date) => {
-  //   let currentDate = new Date().toLocaleDateString();
-  //   let daysLeft = date - currentDate;
-  //   console.log(daysLeft);
-  // };
+  useEffect(() => {
+    daysLeftToSave();
+  }, []);
 
-  // const deleteGoal = (id) => {
-  //   console.log("delete", id);
-  // };
-
-  let currentDate = new Date().toLocaleDateString();
+  const daysLeftToSave = (date) => {
+    let convertedDate = formatDate(date);
+    let currentDate = new Date().toLocaleDateString();
+    let daysLeft = convertedDate - currentDate;
+    console.log(convertedDate, currentDate, daysLeft);
+  };
 
   return (
     <div>
       <Container className="d-flex align-items-center justify-content-center goalsPage">
         <Card className="goalsCard" style={{ maxWidth: "540px" }}>
           <Card.Body>
-            <div className="row">
+            <div className="row goalBody">
               <h3 className="card-title text-center goalTitle">
                 {" "}
                 {emoji} {title}{" "}
@@ -47,7 +46,7 @@ const Goals = ({ id, title, emoji, amount, saveBy, onDelete }) => {
               </p>
               <p className="card-text">
                 <strong>Days Left to Save:</strong>
-                {formatDate(saveBy) - currentDate}
+                {}
               </p>
             </div>
           </Card.Body>

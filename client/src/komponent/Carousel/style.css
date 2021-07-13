@@ -1,0 +1,17 @@
+.caption {
+    display: inline-block;
+    color: gold;
+    /* background-color: white; */
+    padding: 1rem;
+    border-radius: 8px;
+    
+}
+
+.carousel {
+    width: 75%;
+    height: auto;
+}
+
+
+
+

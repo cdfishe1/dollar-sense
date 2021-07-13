@@ -10,11 +10,12 @@ import Signup from "./komponent/Signup/Signup";
 import Login from "./komponent/Login/Login";
 import ForgotPassword from "./komponent/Forgotpass/ForgotPassword";
 import PrivateRoute from "./komponent/PrivateRoute";
+
 import Navbar from "./komponent/Navbar/_Navbar";
 // import Footer from "./komponent/Footer/footer2"
+
+
 import "bootstrap/dist/css/bootstrap.min.css";
-
-
 
 import logo from "./logo.svg";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -29,9 +30,8 @@ function App() {
 
     <div className="appWrapper">
       <Router>
-      
         <AuthProvider>
-        <Navbar/>
+          <Navbar />
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/signup" component={Signup} />
@@ -39,10 +39,14 @@ function App() {
             <Route path="/forgot-password" component={ForgotPassword} />
             <PrivateRoute path="/dashboard" component={Dashboard} />
             <Route path="/about" component={About} />
-            <Route path="/budget" component={Budget} />
+            <PrivateRoute path="/budget" component={Budget} />
             <Route path="/invest" component={Invest} />
-            <Route path="/goals" component={Goals} />
+
+
             <Route path="/learning" component={Learning} />
+
+            <PrivateRoute path="/goals" component={Goals} />
+
           </Switch>
         </AuthProvider>
         {/* <Footer /> */}
