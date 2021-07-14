@@ -14,6 +14,7 @@ const Goals = () => {
   const [goalEmoji, setGoalEmoji] = useState("");
   const [isLoading, setLoading] = useState(false);
   const [goals, setGoals] = useState([]);
+  
 
   useEffect(() => {
     getAllGoals();
@@ -21,13 +22,16 @@ const Goals = () => {
 
   const newGoalBtn = () => {
     console.log("checkingBtn");
+    setGoalName("");
+    setGoalAmount(0.0);
+    setSaveByDate("");
+    setChosenEmoji(null);
   };
 
   const onEmojiClick = (e, emojiObject) => {
     setChosenEmoji(emojiObject);
     const { emoji } = emojiObject;
     setGoalEmoji(emoji);
-    console.log(emojiObject, emoji);
   };
 
   const saveGoalBtn = () => {
@@ -39,7 +43,6 @@ const Goals = () => {
       emoji: goalEmoji,
     };
     setLoading(true);
-    console.log(newGoal);
 
     fetch("/api/new-goal", {
       method: "POST",
@@ -50,7 +53,6 @@ const Goals = () => {
       },
     })
       .then((response) => {
-        console.log(response);
         setLoading(false);
         return response.json();
       })
@@ -83,9 +85,16 @@ const Goals = () => {
     <div className="goals">
 
       <div>
-        <h1 className="container" id="goalsPageTitle">
-          Here's what you're saving for:
-        </h1>
+        {goals && (
+          <h1 className="container" id="goalsPageTitle">
+            Goals Detailed Overview:
+          </h1>
+        )}
+        {goals === [] && (
+          <h1 className="container" id="goalsPageTitle">
+            No Goals Yet, Let's Get Started!{" "}
+          </h1>
+        )}
         {goals.map((goal) => {
           return (
             <div key={goal._id}>

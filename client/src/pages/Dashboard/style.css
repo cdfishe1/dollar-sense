@@ -1,0 +1,77 @@
+.dashboard {
+  background-color: #f8f9fa;
+}
+.dashTitle {
+  font-family: "Heebo", sans-serif;
+  margin-top: 50px;
+}
+
+.dashGoals {
+  display: inline-flex;
+}
+
+.goalTitle {
+  font-family: "Heebo", sans-serif;
+}
+
+.goalsCard{
+  width: 540px;
+  border-radius: 10px;
+ 
+}
+
+#cardBody{
+  background-color:#343a40
+}
+
+#savingTitle, #budgetTitle,#blogTitle {
+  font-family: "Heebo", sans-serif;
+  margin-left: 20px;
+ 
+}
+
+#budgetTitle{
+  margin-top:30px;
+}
+
+
+
+.goalLinks{
+  text-decoration: none;
+  color:#74c69d;
+}
+
+.goalLinks:hover{
+  cursor: pointer;
+  color: white;
+  transform: scale(1.05);
+  text-decoration: none;
+}
+
+#logOutBtn {
+  font-size: 18pt;
+  font-family: "Heebo", sans-serif;
+
+}
+
+.carouselCont{
+  width: 800px;
+}
+
+@media (max-width: 375px) {
+
+  .goalsCard {
+    width: 300px 
+  }
+  .carouselCont{
+    width:  -webkit-fill-available;
+  }
+}
+
+@media (max-width: 414px) {
+
+  .goalsCard {
+    width: 300px
+  }
+}
+

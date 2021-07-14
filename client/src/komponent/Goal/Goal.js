@@ -1,35 +1,38 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Card, Container } from "react-bootstrap";
 import "./style.css";
 import { FaTimes } from "react-icons/fa";
 
 const Goals = ({ id, title, emoji, amount, saveBy, onDelete }) => {
-  const formatDate = (date) => {
-    let convertedDate = `${new Date(date).getMonth() + 1}/${
+  const [savedDate, setSavedDate]= useState()
+ 
+  
+  const formatDate =  (date) => {
+    let convertedDate =  `${new Date(date).getMonth() + 1}/${
       new Date(date).getDate() + 1
     }/${new Date(date).getFullYear()}`;
 
     return convertedDate;
   };
 
-  // const daysLeftToSave = (formatDate, date) => {
-  //   let currentDate = new Date().toLocaleDateString();
-  //   let daysLeft = date - currentDate;
-  //   console.log(daysLeft);
-  // };
+  useEffect(() => {
+    daysLeftToSave();
+  }, []);
 
-  // const deleteGoal = (id) => {
-  //   console.log("delete", id);
-  // };
-
-  let currentDate = new Date().toLocaleDateString();
+  const daysLeftToSave = () => {
+    setSavedDate(saveBy)
+   
+    let currentDate = new Date().toLocaleDateString();
+    let daysLeft = savedDate - currentDate;
+    console.log(savedDate, currentDate, daysLeft);
+  };
 
   return (
     <div>
       <Container className="d-flex align-items-center justify-content-center goalsPage">
         <Card className="goalsCard" style={{ maxWidth: "540px" }}>
           <Card.Body>
-            <div className="row">
+            <div className="row goalBody">
               <h3 className="card-title text-center goalTitle">
                 {" "}
                 {emoji} {title}{" "}
@@ -47,7 +50,7 @@ const Goals = ({ id, title, emoji, amount, saveBy, onDelete }) => {
               </p>
               <p className="card-text">
                 <strong>Days Left to Save:</strong>
-                {formatDate(saveBy) - currentDate}
+                {}
               </p>
             </div>
           </Card.Body>

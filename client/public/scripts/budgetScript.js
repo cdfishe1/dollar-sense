@@ -1,5 +1,5 @@
 // import {Chart} from "chart.js";
-let transactions = [];
+// let transactions = [];
 let myChart;
 
 // fetch("/api/transaction")
@@ -102,9 +102,9 @@ function populateChart() {
 //   };
 
 //   // if subtracting funds, convert amount to negative number
-//   if (!isAdding) {
-//     transaction.value *= -1;
-//   }
+  // if (!isAdding) {
+  //   transaction.value *= -1;
+  // }
 
 //   // add to beginning of current array of data
 //   transactions.unshift(transaction);

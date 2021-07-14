@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Mern Demo",
   "main": "server.js",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
@@ -30,6 +33,7 @@
     "mongoose": "^5.12.14",
     "react-bootstrap": "^1.6.1",
     "react-bootstrap-card": "^0.2.1",
+    "react-chartjs-2": "^3.0.3",
     "react-helmet": "^6.1.0",
     "react-icons": "^4.2.0",
     "react-materialize": "^3.9.8",

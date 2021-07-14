@@ -32,7 +32,6 @@ router.get("/api/all-goals/:userID", (req, res) => {
 
   Goals.find({ userID: userID }).then((data) => {
     res.json(data);
-    console.log(data);
   });
 });
 
@@ -44,19 +43,9 @@ router.delete("/api/delete-goal/:id", (req, res) => {
     .catch((err) => console.log(err));
 });
 
-// router.post("/api/transaction/bulk", ({ body }, res) => {
-//   Transaction.insertMany(body)
-//     .then((dbTransaction) => {
-//       res.json(dbTransaction);
-//     })
-//     .catch((err) => {
-//       //
-//       res.status(404).json(err);
-//     });
-// });
-
-router.get("/api/transaction", (req, res) => {
-  Transaction.find({})
+router.get("/api/transaction/:id", (req, res) => {
+  const { id } = req.params;
+  Transaction.find({ userID: id })
     .sort({ date: -1 })
     .then((dbTransaction) => {
       res.json(dbTransaction);
