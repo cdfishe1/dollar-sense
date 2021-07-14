@@ -1,11 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Card, Container } from "react-bootstrap";
 import "./style.css";
 import { FaTimes } from "react-icons/fa";
 
 const Goals = ({ id, title, emoji, amount, saveBy, onDelete }) => {
-  const formatDate = (date) => {
-    let convertedDate = `${new Date(date).getMonth() + 1}/${
+  const [savedDate, setSavedDate]= useState()
+ 
+  
+  const formatDate =  (date) => {
+    let convertedDate =  `${new Date(date).getMonth() + 1}/${
       new Date(date).getDate() + 1
     }/${new Date(date).getFullYear()}`;
 
@@ -16,11 +19,12 @@ const Goals = ({ id, title, emoji, amount, saveBy, onDelete }) => {
     daysLeftToSave();
   }, []);
 
-  const daysLeftToSave = (date) => {
-    let convertedDate = formatDate(date);
+  const daysLeftToSave = () => {
+    setSavedDate(saveBy)
+   
     let currentDate = new Date().toLocaleDateString();
-    let daysLeft = convertedDate - currentDate;
-    console.log(convertedDate, currentDate, daysLeft);
+    let daysLeft = savedDate - currentDate;
+    console.log(savedDate, currentDate, daysLeft);
   };
 
   return (

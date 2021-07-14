@@ -14,6 +14,7 @@ const Goals = () => {
   const [goalEmoji, setGoalEmoji] = useState("");
   const [isLoading, setLoading] = useState(false);
   const [goals, setGoals] = useState([]);
+  
 
   useEffect(() => {
     getAllGoals();
@@ -82,7 +83,7 @@ const Goals = () => {
 
   return (
     <div className="goals">
-      <Header />
+      
       <div>
         {goals && (
           <h1 className="container" id="goalsPageTitle">
