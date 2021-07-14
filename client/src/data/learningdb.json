@@ -1,7 +1,7 @@
 {
     "learnings": [
 
-      // investing tips
+ 
       {
         "id": "Investing Tip",
         "title": "Don't Chase a Hot Tip",
@@ -10,7 +10,7 @@
         "date": "December 22, 2020"
       },
 
-      // savings tips
+      
       {
         "id": "Savings Tip",
         "title": "Pay Yourself First",
@@ -19,7 +19,7 @@
         "date": "2021"
       },
 
-      // credit tips
+    
       {
         "id": "Credit Tip",
         "title": "Pay bills on time",

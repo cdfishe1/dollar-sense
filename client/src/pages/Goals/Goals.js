@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 //import db from "../../data/goalsdb.json";
 import Goal from "../../komponent/Goal/Goal";
-import Header from "../../komponent/Header/Header";
+// import Header from "../../komponent/Header/Header";
 import "./style.css";
 import Picker from "emoji-picker-react";
 import { auth } from "../../Firebase";
@@ -81,7 +81,7 @@ const Goals = () => {
 
   return (
     <div className="goals">
-      <Header />
+
       <div>
         <h1 className="container" id="goalsPageTitle">
           Here's what you're saving for:

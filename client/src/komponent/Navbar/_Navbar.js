@@ -36,6 +36,10 @@ const NavBar = () => {
     <Link as={Link} to="/goals">
     <ReactBootStrap.Nav.Link href="../../pages/Budget/Budget.js">Goals</ReactBootStrap.Nav.Link>
     </Link>
+
+    <Link as={Link} to="/dashboard">
+    <ReactBootStrap.Nav.Link href="../../pages/Dashboard/Dashboard.js">Dashboard</ReactBootStrap.Nav.Link>
+    </Link>
     
     {/* <Link to="/dashboard">
     <ReactBootStrap.Nav.Link href="../../pages/Dashboard/Dashboard.js">Dashboard</ReactBootStrap.Nav.Link>
