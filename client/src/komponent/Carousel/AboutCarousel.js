@@ -13,7 +13,7 @@ const AboutCarousel = () => {
 
 <Carousel>
   <Carousel.Item>
-  <Link to ="/learn">
+  <Link to ="/Learning">
     <img
       className="d-block w-100"
       src="assets/literacy.png"
