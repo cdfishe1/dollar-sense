@@ -15,39 +15,39 @@ const NavBar = () => {
     return(
         <div className="App">
     <ReactBootStrap.Navbar collapseOnSelect expand="xl" bg="dark" variant="dark">
-  <Link to="/">  
-  <ReactBootStrap.Navbar.Brand href="#home">dollarSense</ReactBootStrap.Navbar.Brand>
-  </Link>
+  {/* <Link to="/">   */}
+  <ReactBootStrap.Navbar.Brand style={{ color: "#74C69D" }} href="/">dollarSense</ReactBootStrap.Navbar.Brand>
+  {/* </Link> */}
   <ReactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav">
     <ReactBootStrap.Nav className="mr-auto"> 
-    <Link to="/">
-    <ReactBootStrap.Nav.Link href="../../pages/Home/Home.js">Home</ReactBootStrap.Nav.Link>
-    </Link>
-    <Link to="/about">
-    <ReactBootStrap.Nav.Link href="../../pages/About/About.js">About</ReactBootStrap.Nav.Link>
-    </Link>
-    <Link to="/learning">
-    <ReactBootStrap.Nav.Link href="../../pages/Learning/Learning.js">Learning</ReactBootStrap.Nav.Link>
-    </Link>
-    <Link as={Link} to="/budget">
-    <ReactBootStrap.Nav.Link href="../../pages/Budget/Budget.js">Budget</ReactBootStrap.Nav.Link>
-    </Link>
-    <Link as={Link} to="/goals">
-    <ReactBootStrap.Nav.Link href="../../pages/Budget/Budget.js">Goals</ReactBootStrap.Nav.Link>
-    </Link>
+    {/* <Link to="/"> */}
+    <ReactBootStrap.Nav.Link href="/">Home</ReactBootStrap.Nav.Link>
+    {/* </Link> */}
+    {/* <Link to="/about"> */}
+    <ReactBootStrap.Nav.Link href="/about">About</ReactBootStrap.Nav.Link>
+    {/* </Link> */}
+    {/* <Link to="/learning"> */}
+    <ReactBootStrap.Nav.Link href="/learning">Learning</ReactBootStrap.Nav.Link>
+    {/* </Link> */}
+    {/* <Link as={Link} to="/budget"> */}
+    <ReactBootStrap.Nav.Link href="/budget">Budget</ReactBootStrap.Nav.Link>
+    {/* </Link> */}
+    {/* <Link as={Link} to="/goals"> */}
+    <ReactBootStrap.Nav.Link href="/goals">Goals</ReactBootStrap.Nav.Link>
+    {/* </Link> */}
 
-    <Link as={Link} to="/dashboard">
-    <ReactBootStrap.Nav.Link href="../../pages/Dashboard/Dashboard.js">Dashboard</ReactBootStrap.Nav.Link>
-    </Link>
+    {/* <Link as={Link} to="/dashboard"> */}
+    <ReactBootStrap.Nav.Link href="/dashboard">Dashboard</ReactBootStrap.Nav.Link>
+    {/* </Link> */}
     
     {/* <Link to="/dashboard">
     <ReactBootStrap.Nav.Link href="../../pages/Dashboard/Dashboard.js">Dashboard</ReactBootStrap.Nav.Link>
     </Link> */}
 
-    <Link to="/login">
+    {/* <Link to="/login"> */}
     <ReactBootStrap.Nav.Link href="../komponent/Login">Login</ReactBootStrap.Nav.Link>
-    </Link>
+    {/* </Link> */}
 
       {/* <ReactBootStrap.NavDropdown title="Signed In " id="collasible-nav-dropdown">
         <ReactBootStrap.NavDropdown.Item to="/dashboard" href="../../pages/Dashboard">Dashboard</ReactBootStrap.NavDropdown.Item>
