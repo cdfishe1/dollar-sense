@@ -1,14 +1,16 @@
 .caption {
     display: inline-block;
-    color: gold;
-    /* background-color: white; */
+    background-color: rgba(255, 255, 255, 0.5);;
+    /* color: #74c69d; */
+    color: red;
+    font-weight: bold;
     padding: 1rem;
     border-radius: 8px;
     
 }
 
 .carousel {
-    width: 75%;
+    width: 90%;
     height: auto;
 }
 
