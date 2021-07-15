@@ -1,0 +1,60 @@
+.blogCards{
+    display: inline-flex;
+ 
+    
+}
+
+.blogs{
+    margin:15px
+}
+
+.bTitle{
+  text-decoration: none;
+  color:black
+}
+
+.bTitle:hover{
+  cursor: pointer;
+}
+
+.embed-responsive {
+  object-fit: cover;
+}
+
+.middleImg{
+  position: relative;
+  top:15px
+}
+
+@media (max-width: 375px) {
+.blogCards {
+  display: block;
+  
+    }
+  
+  }
+  
+  @media (max-width: 414px) {
+  
+    .blogCards {
+        display: block
+        }
+ 
+  } 
+
+  @media (max-width: 768px) {
+  
+    .blogCards {
+        display: block
+        }
+ 
+  } 
+
+
+  @media (max-width: 1024px) {
+  
+    .blogCards {
+        display: block
+        }
+ 
+  } 

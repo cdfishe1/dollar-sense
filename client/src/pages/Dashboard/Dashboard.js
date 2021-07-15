@@ -4,7 +4,7 @@ import { Card, Button, Alert, Container } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import { auth } from "../../Firebase";
 import "./style.css";
-import Blogs from "../../komponent/Blogs/Blogs";
+import LearningBlogs from "../../komponent/Blogs/Blogs";
 
 const Dashboard = () => {
   const [error, setError] = useState("");
@@ -72,12 +72,12 @@ const Dashboard = () => {
       </div>
       <hr></hr>
       <div>
-        <h3 id="blogTitle" className="mb-4">Not Sure Where to Start? 
-        Check These Out:</h3>
+        <h3 id="blogTitle" className="mb-4">Check These Out: Finance Tips
+        </h3>
       
         <div>
           
-          <Blogs />
+          <LearningBlogs />
         </div>
       </div>
       <div className="w-100 text-center mt-2">
