@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 const AboutCarousel = () => {
   return (
     
-<Container className = "d-flex align-items-center justify-content-center">
+<Container className = "d-flex align-items-center justify-content-center mt-2">
 
 <Carousel>
   <Carousel.Item>
@@ -22,7 +22,7 @@ const AboutCarousel = () => {
     <Carousel.Caption>
       <div className = "caption">
       <h3>Learn About Money!</h3>
-      <p>More on budgeting, credit, savings, and more.</p>
+      <p>More on budgeting, credit, and more.</p>
       </div>
       
     </Carousel.Caption>
@@ -40,7 +40,7 @@ const AboutCarousel = () => {
     <Carousel.Caption>
       <div className = "caption">
       <h3>Track Your Money!</h3>
-      <p>Track your money and expenses to help you save!</p>
+      <p>Track your money to help you save!</p>
       </div>
       
     </Carousel.Caption>
