@@ -4,9 +4,9 @@ import { Card, Button, Alert, Container } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import { auth } from "../../Firebase";
 import "./style.css";
-import LearningBlogs from "../../komponent/Blogs/Blogs";
+import LearningBlogs from "../../komponent/LearningBlogs/LearningBlogs";
 
-const Dashboard = () => {
+const Learning = () => {
   const [error, setError] = useState("");
   const { currentUser, logout } = useAuth();
   const history = useHistory();
@@ -44,7 +44,7 @@ const Dashboard = () => {
       <h1 className="dashTitle text-center mb-4">
         Welcome, {currentUser.email} !
       </h1>
-      <hr></hr>
+      {/* <hr></hr>
       {error && <Alert variant="danger">{error}</Alert>}
       <div>
         <h3 id="savingTitle" className="mb-4">
@@ -66,13 +66,13 @@ const Dashboard = () => {
             </div>
           );
         })}
-      </div>
-      <div>
+      </div> */}
+      {/* <div>
         <h3 id="budgetTitle" className="mb-4">Current Budget Status: $300</h3>
-      </div>
+      </div> */}
       <hr></hr>
       <div>
-        <h3 id="blogTitle" className="mb-4">Check These Out: Finance Tips
+        <h3 id="blogTitle" className="mb-4">Financial Tips:  
         </h3>
       
         <div>
@@ -89,4 +89,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Learning;

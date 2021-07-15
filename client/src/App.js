@@ -2,7 +2,7 @@ import React from "react";
 import About from "./pages/About/About";
 import Home from "./pages/Home/Home";
 import Budget from "./pages/Budget/Budget";
-import Learning from "./komponent/Learning/Learning";
+import Learning from "./pages/Learning/Learning";
 import Invest from "./pages/Invest/Invest";
 import Goals from "./pages/Goals/Goals";
 import Dashboard from "./pages/Dashboard/Dashboard";
