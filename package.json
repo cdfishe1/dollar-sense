@@ -30,6 +30,7 @@
     "firebase": "^8.6.8",
     "if-env": "^1.0.4",
     "materialize-css": "^1.0.0-rc.2",
+    "moment": "^2.29.1",
     "mongoose": "^5.12.14",
     "react-bootstrap": "^1.6.1",
     "react-bootstrap-card": "^0.2.1",
@@ -37,6 +38,7 @@
     "react-helmet": "^6.1.0",
     "react-icons": "^4.2.0",
     "react-materialize": "^3.9.8",
+    "react-moment": "^1.1.1",
     "react-router-dom": "^5.2.0",
     "react-script-tag": "^1.1.2"
   }
