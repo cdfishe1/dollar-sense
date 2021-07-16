@@ -7,7 +7,7 @@ const Budget = () => {
   const [tName, setTName] = useState("");
   const [amount, setAmount] = useState(0.0);
   const [allTransactions, setTransactions] = useState("");
-  const [total, setTotal] = useState(0);
+  // const [total, setTotal] = useState(0);
   let transactions = useRef();
   
   useEffect(() => {
@@ -30,11 +30,13 @@ const Budget = () => {
 
     function populateTotal() {
       // reduce transaction amounts to a single total value
+      
       let total = transactions.reduce((total, t) => {
         return total + parseInt(t.value);
       }, 0);
 
       let totalEl = document.querySelector("#total");
+
 
       totalEl.textContent = total;
 
@@ -45,7 +47,7 @@ const Budget = () => {
         totalEl.style.color = "crimson"
       }
 
-      totalEl.innerHTML = total;
+     
 
     }
 
@@ -121,6 +123,7 @@ const Budget = () => {
           }}
           placeholder="Transaction amount"
         />
+        <br></br>
         <button
           id="add-btn"
           onClick={() => {

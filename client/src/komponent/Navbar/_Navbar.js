@@ -60,12 +60,13 @@ const NavBar = () => {
     <Link to="/">
     {/* <ReactBootStrap.Nav.Link href="#deets">User ID</ReactBootStrap.Nav.Link> */}
     </Link>
-    <Link to="/">
+    {/* <Link to="/"> */}
     <ReactBootStrap.Nav.Link eventKey={2} href="#memes">
         {/* Dank memes */}
       </ReactBootStrap.Nav.Link>
-    </Link>
+    {/* </Link> */}
     </ReactBootStrap.Nav>
+    
   </ReactBootStrap.Navbar.Collapse>
 </ReactBootStrap.Navbar>
         </div>
