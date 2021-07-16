@@ -37,13 +37,18 @@ const Budget = () => {
 
       let totalEl = document.querySelector("#total");
 
-      // if (total => 0) {
-      //   totalEl.style.color = "#74c69d"
-      // } else {
-      //   totalEl.style.color = "crimson"
-      // }
 
       totalEl.textContent = total;
+
+
+      if (totalEl.innerHTML >= 0) {
+        totalEl.style.color = "#74c69d"
+      } else {
+        totalEl.style.color = "crimson"
+      }
+
+     
+
     }
 
     function populateTable() {
