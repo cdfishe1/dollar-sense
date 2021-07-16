@@ -35,7 +35,18 @@ const Budget = () => {
       }, 0);
 
       let totalEl = document.querySelector("#total");
+
       totalEl.textContent = total;
+
+
+      if (totalEl.innerHTML >= 0) {
+        totalEl.style.color = "#74c69d"
+      } else {
+        totalEl.style.color = "crimson"
+      }
+
+      totalEl.innerHTML = total;
+
     }
 
     function populateTable() {
