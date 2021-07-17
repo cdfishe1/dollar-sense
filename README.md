@@ -38,9 +38,9 @@ So that, I can get familiar with real world responsibilities I will have as an a
 ```
 GIVEN a financial education website
 When I go to the application, I’m brought to the homepage and there will be an informational introduction of what our website is about.
-Then when I hit login I am prompted to enter my credentials, or if I select sign up I am presented with a signup form. 
-Then once either is complete a user will be shows a “success” message 
-Then when I am logged in or have successfully sign up, I am brought to my personal dashboard that shows me an overview of my achievements 
+Then when I hit login I am prompted to enter my credentials, or if I select sign up I am presented with a signup form.
+Then once either is complete a user will be shows a “success” message
+Then when I am logged in or have successfully sign up, I am brought to my personal dashboard that shows me an overview of my achievements
 That dashboard will have 3 tabs or views for goal setting, budgeting, and investing.
 
 ```
@@ -49,11 +49,7 @@ That dashboard will have 3 tabs or views for goal setting, budgeting, and invest
 
 ### Screencast on wide screen
 
-
-
 ### Screencast on mobile
-
-
 
 ## Deployment
 
@@ -77,21 +73,22 @@ This app uses the following dependencies:
 - [react-script-tag](https://www.npmjs.com/package/react-script-tag)
 - [react-scripts](https://www.npmjs.com/package/react-scripts)
 
-
 ### Installation Instructions
 
 - In order to install this app please run npm install on the command line in node.js.
 - You can use the .env.EXAMPLE file to input your specific information for the working .env file.
 - If deploying to Heroku you will need to hook your MongoDB cluster to the webserver via Mongo Atlas.
 
-
 ## Challenges and Successes
 
 - Having components use external javascripts was a challenge. We used React Script Tag to overcome this.
 - Integrating Bootstrap into the React archiecture was sometimes challenging.
+- Working with the Date object in JS was challenging. When a user saved a date, it saved to the DB in Greenwich Mean Time (GMT), and it was difficult to format the dates to display how we wanted. After getting 50% through the issues, MomentJS was implemented to come to a quicker solution.
+- Responsiveness of images within Bootstrap cards were challenging at almost all levels of responsiveness. Ultimately left images for desktop/iPad views, but eliminated them on smaller views. 
+- There were issues with using the .env file to hide our API key. We used the file to hide a handful of other personal keys as it relates to our Firebase Auth implementation, but for some reason the API key could not be read. It had to be inserted directly into the file for the connection to Firebase to work.
+- Once a user signs up, there is a specific UID that Firebase assigns to the user. It was challenging to work through how to access the UID in the routes file in order to display the user specific budget/goals. Instead of doing it in the routes file, we ended up making our API calls within the component that alleviated the issue as well as passing that UID as a query parameter helped us achieve our goal.
 
 ## Directions for Future Development
-
 
 ## Special Thanks
 
@@ -127,4 +124,3 @@ SOFTWARE.
 
 </blockquote>
 </details>
-
