@@ -55,11 +55,13 @@ const Dashboard = () => {
         {goals.map((goal) => {
           return (
             <div className="dashGoals" key={goal._id}>
-              <Card className="goalsCard" >
+              <Card className="goalsCard">
                 <Card.Body id="cardBody">
-                  <h3 className="card-title goalTitle"><a className="goalLinks"href="/goals">
-                    {" "}
-                    {goal.emoji} {goal.title}{" "}</a>
+                  <h3 className="card-title goalTitle">
+                    <a className="goalLinks" href="/goals">
+                      {" "}
+                      {goal.emoji} {goal.title}{" "}
+                    </a>
                   </h3>
                 </Card.Body>
               </Card>
@@ -68,15 +70,18 @@ const Dashboard = () => {
         })}
       </div>
       <div>
-        <h3 id="budgetTitle" className="mb-4">Current Budget Status: $300</h3>
+        <h3 id="budgetTitle" className="mb-4">
+          Current Budget Status: $300
+        </h3>
       </div>
       <hr></hr>
       <div>
-        <h3 id="blogTitle" className="mb-4">Check These Out: Finance Tips
+        <h3 id="blogTitle" className="mb-4">
+          {" "}
+          Not Sure Where to Start? Check These Out:
         </h3>
-      
+
         <div>
-          
           <LearningBlogs />
         </div>
       </div>

@@ -39,10 +39,11 @@
   object-position: left;
 }
 
-.blogWrapper {
-  --bs-gutter-x: 0;
+.blogWrapper,
+.blogWrapper .row {
+  --bs-gutter-x: 0 !important;
 }
-
+/* 
 @media (max-width: 375px) {
   .blogCards {
     display: block;
@@ -62,6 +63,12 @@
 }
 
 @media (max-width: 1024px) {
+  .blogCards {
+    display: block;
+  }
+} */
+
+@media (max-width: 1366px) {
   .blogCards {
     display: block;
   }
