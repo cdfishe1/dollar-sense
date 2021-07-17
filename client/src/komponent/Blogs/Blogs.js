@@ -40,7 +40,7 @@ const Blogs = () => {
             <div className="embed-responsive col-md-4">
               <a href="https://www.ramseysolutions.com/budgeting/the-truth-about-budgeting">
                 <img
-                  src="/assets/budgettips.png"
+                  src="/assets/newBudgetPhoto.jpg"
                   className="card-img img-fluid embed-responsive-item img2"
                   alt="15 budget tips"
                 />
@@ -53,7 +53,7 @@ const Blogs = () => {
                     className="bTitle"
                     href="https://www.ramseysolutions.com/budgeting/the-truth-about-budgeting"
                   >
-                    15 Practical Budgeting Tips
+                    Simple Start | 15 Practical Budgeting Tips
                   </a>
                 </h5>
                 <p className="card-text">
