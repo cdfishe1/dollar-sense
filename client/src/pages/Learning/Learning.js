@@ -66,13 +66,13 @@ const Learning = () => {
             </div>
           );
         })}
-      </div> */}
-      {/* <div>
+      </div>
+      <div>
         <h3 id="budgetTitle" className="mb-4">Current Budget Status: $300</h3>
       </div> */}
       <hr></hr>
       <div>
-        <h3 id="blogTitle" className="mb-4">Financial Tips:  
+        <h3 id="blogTitle" className="mb-4">Learn About Finance
         </h3>
       
         <div>
@@ -81,9 +81,9 @@ const Learning = () => {
         </div>
       </div>
       <div className="w-100 text-center mt-2">
-        <Button variant="link" id="logOutBtn" onClick={handleLogout}>
+        {/* <Button variant="link" id="logOutBtn" onClick={handleLogout}>
           Log Out
-        </Button>
+        </Button> */}
       </div>
     </div>
   );
