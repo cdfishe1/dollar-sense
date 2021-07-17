@@ -1,14 +1,17 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./budget.css";
 import { auth } from "../../Firebase";
-
+import Chart from 'chart.js/auto';
 
 const Budget = () => {
   const [tName, setTName] = useState("");
   const [amount, setAmount] = useState(0.0);
   const [allTransactions, setTransactions] = useState("");
+  const [chart, setChart] = useState(null);
   // const [total, setTotal] = useState(0);
   let transactions = useRef();
+  let myChart = useRef();
+  
   
   useEffect(() => {
     fetch(`/api/transaction/${auth.currentUser.uid}`)
@@ -23,53 +26,94 @@ const Budget = () => {
           setTransactions(transactions);
           populateTotal();
           populateTable();
-          
+          populateChart(myChart);
         },
         [allTransactions]
       );
 
-    function populateTotal() {
-      // reduce transaction amounts to a single total value
-      
-      let total = transactions.reduce((total, t) => {
-        return total + parseInt(t.value);
-      }, 0);
-
-      let totalEl = document.querySelector("#total");
-
-
-      totalEl.textContent = total;
-
-
-      if (totalEl.innerHTML >= 0) {
-        totalEl.style.color = "#74c69d"
-      } else {
-        totalEl.style.color = "crimson"
-      }
-
-     
-
-    }
-
-    function populateTable() {
-      let tbody = document.querySelector("#tbody");
-      tbody.innerHTML = "";
-
-      transactions.forEach((transaction) => {
-        // create and populate a table row
-        let tr = document.createElement("tr");
-        tr.innerHTML = `
-        <td>${transaction.name}</td>
-        <td>${transaction.value}</td>
-      `;
-
-        tbody.appendChild(tr);
-      });
-    }
-
-    
   });
 
+  //poplulate total in DOM
+  function populateTotal() {
+    // reduce transaction amounts to a single total value
+    
+    let total = transactions.reduce((total, t) => {
+      return total + parseInt(t.value);
+    }, 0);
+
+    let totalEl = document.querySelector("#total");
+
+
+    totalEl.textContent = total;
+
+
+    if (totalEl.innerHTML >= 0) {
+      totalEl.style.color = "#74c69d"
+    } else {
+      totalEl.style.color = "crimson"
+    }
+  }
+
+  //create table of budget data
+  function populateTable() {
+    let tbody = document.querySelector("#tbody");
+    tbody.innerHTML = "";
+
+    transactions.forEach((transaction) => {
+      // create and populate a table row
+      let tr = document.createElement("tr");
+      tr.innerHTML = `
+      <td>${transaction.name}</td>
+      <td>${transaction.value}</td>
+    `;
+
+      tbody.appendChild(tr);
+    });
+  }
+
+  
+  //create chart based off of budget data
+  function populateChart(myChart) {
+    // copy array and reverse it
+    let reversed = transactions.slice().reverse();
+    let sum = 0;
+  
+    // create date labels for chart
+    let labels = reversed.map(t => {
+      let date = new Date(t.date);
+      return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
+    });
+  
+    // create incremental values for chart
+    let data = reversed.map(t => {
+      sum += parseInt(t.value);
+      return sum;
+    });
+  
+    //remove old chart if it exists
+    console.log('line 98', myChart)
+    if (myChart) {
+      myChart.destroy();
+    } 
+    
+    let ctx = document.getElementById("myChart").getContext("2d");
+  
+    myChart = new Chart(ctx, {
+      type: 'line',
+        data: {
+          labels,
+          datasets: [{
+              label: "Total Over Time",
+              fill: true,
+              backgroundColor: "#6666ff",
+              data
+          }]
+      }
+    });
+    // setChart(chart);
+  }
+
+  //function to add or subtract funds
   const addBtn = (isAdding) => {
     let transaction = {
       name: tName,
@@ -82,8 +126,6 @@ const Budget = () => {
       transaction.value *= -1;
     }
 
-    console.log(transaction);
-
     fetch("/api/transaction", {
       method: "POST",
       body: JSON.stringify(transaction),
@@ -92,7 +134,6 @@ const Budget = () => {
         "Content-Type": "application/json",
       },
     }).then((response) => {
-      console.log(response);
       return response.json();
     })
   };
@@ -154,6 +195,7 @@ const Budget = () => {
       </div>
 
       <canvas id="myChart"></canvas>
+      
 
     </div>
   );
