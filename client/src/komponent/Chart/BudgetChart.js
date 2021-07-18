@@ -1,11 +1,12 @@
-import React, { useEffect, useRef } from 'react';
-// import { Line } from 'react-chartjs-2';
+import React, { useEffect, useRef, useState} from 'react';
+import { Line } from 'react-chartjs-2';
 import { auth } from "../../Firebase";
-import Chart from 'chart.js/auto';
 
 const BudgetChart = () => {
+  const [chartData, setChartData] = useState({});
   let transactions = useRef();
-  let myChart = useRef();
+  // const [allTransactions, setTransactions] = useState("");
+
 
   useEffect(() => {
     fetch(`/api/transaction/${auth.currentUser.uid}`)
@@ -13,60 +14,52 @@ const BudgetChart = () => {
         return response.json();
       })
       .then(
-
-        (data) => {
+        (budgetData) => {
           // save db data on global variable
-          transactions = data;
-          // setTransactions(transactions);
+          transactions = budgetData;
+          // setTransactions(transactions)
           populateChart();
-        },
-        []
-      );
 
-  });
+        });
 
-  function populateChart() {
-    // copy array and reverse it
+  }, []);
+
+  const populateChart = () => {
+    //  copy array and reverse it
     let reversed = transactions.slice().reverse();
     let sum = 0;
-  
+
     // create date labels for chart
-    let labels = reversed.map(t => {
+    let budgetLabels = reversed.map(t => {
       let date = new Date(t.date);
       return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
     });
-  
+
     // create incremental values for chart
-    let data = reversed.map(t => {
+    let budgetData = reversed.map(t => {
       sum += parseInt(t.value);
       return sum;
     });
-  
-    //remove old chart if it exists
-    console.log('line 98', myChart)
-    if (myChart) {
-      myChart.destroy();
-    } 
-    
-    let ctx = document.getElementById("myChart").getContext("2d");
-  
-    myChart = new Chart(ctx, {
-      type: 'line',
-        data: {
-          labels,
-          datasets: [{
-              label: "Total Over Time",
-              fill: true,
-              backgroundColor: "#6666ff",
-              data
-          }]
-      }
-    });
-    // setChart(chart);
-  }
 
+    setChartData({
+      labels: [...budgetLabels],
+      datasets: [
+        {
+          label: 'Budget',
+          data: [...budgetData],
+          fill: false,
+          backgroundColor: 'rgb(255, 99, 132)',
+          borderColor: 'rgba(255, 99, 132, 0.2)',
+        },
+      ],
+    })
+  }
+    
   return (
-    <canvas id="myChart"></canvas>
+    <div>
+      <Line data={chartData} />
+    </div>
+    
   )
 }
 
