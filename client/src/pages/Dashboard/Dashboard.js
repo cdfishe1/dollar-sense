@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 import { auth } from "../../Firebase";
 import "./style.css";
 import LearningBlogs from "../../komponent/Blogs/Blogs";
+import Total from "../../komponent/Total/Total"
 
 const Dashboard = () => {
   const [error, setError] = useState("");
@@ -71,7 +72,7 @@ const Dashboard = () => {
       </div>
       <div>
         <h3 id="budgetTitle" className="mb-4">
-          Current Budget Status: $300
+          <Total />
         </h3>
       </div>
       <hr></hr>
