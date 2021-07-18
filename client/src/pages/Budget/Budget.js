@@ -1,18 +1,17 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./budget.css";
 import { auth } from "../../Firebase";
-// import Chart from 'chart.js/auto';
 import Total from '../../komponent/Total/Total'
+import BudgetChart from '../../komponent/Chart/BudgetChart'
 
 const Budget = () => {
   const [tName, setTName] = useState("");
   const [amount, setAmount] = useState(0.0);
-  const [allTransactions, setTransactions] = useState("");
+  // const [allTransactions, setTransactions] = useState("");
   let transactions = useRef();
-  // let myChart = useRef();
-  
   
   useEffect(() => {
+    // const abortCont = new AbortController();
     fetch(`/api/transaction/${auth.currentUser.uid}`)
       .then((response) => {
         return response.json();
@@ -22,38 +21,35 @@ const Budget = () => {
         (data) => {
           // save db data on global variable
           transactions = data;
-          setTransactions(transactions);
-          populateTotal();
+          // setTransactions(transactions);
           populateTable();
-          // populateChart();
-        },
-        [allTransactions]
-      );
+          
+        });
 
-  });
+  }, []);
 
  
 
   //poplulate total in DOM
-  function populateTotal() {
-    // reduce transaction amounts to a single total value
+  // function populateTotal() {
+  //   // reduce transaction amounts to a single total value
     
-    let total = transactions.reduce((total, t) => {
-      return total + parseInt(t.value);
-    }, 0);
+  //   let total = transactions.reduce((total, t) => {
+  //     return total + parseInt(t.value);
+  //   }, 0);
 
-    let totalEl = document.querySelector("#total");
-
-
-    totalEl.textContent = total;
+  //   let totalEl = document.querySelector("#total");
 
 
-    if (totalEl.innerHTML >= 0) {
-      totalEl.style.color = "#74c69d"
-    } else {
-      totalEl.style.color = "crimson"
-    }
-  }
+  //   totalEl.textContent = total;
+
+
+  //   if (totalEl.innerHTML >= 0) {
+  //     totalEl.style.color = "#74c69d"
+  //   } else {
+  //     totalEl.style.color = "crimson"
+  //   }
+  // }
 
   //create table of budget data
   function populateTable() {
@@ -72,47 +68,6 @@ const Budget = () => {
     });
   }
 
-  
-  //create chart based off of budget data
-  // function populateChart() {
-  //   // copy array and reverse it
-  //   let reversed = transactions.slice().reverse();
-  //   let sum = 0;
-  
-  //   // create date labels for chart
-  //   let labels = reversed.map(t => {
-  //     let date = new Date(t.date);
-  //     return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
-  //   });
-  
-  //   // create incremental values for chart
-  //   let data = reversed.map(t => {
-  //     sum += parseInt(t.value);
-  //     return sum;
-  //   });
-  
-  //   //remove old chart if it exists
-  //   console.log('line 98', myChart)
-  //   // if (myChart) {
-  //   //   myChart.destroy();
-  //   // } 
-    
-  //   let ctx = document.getElementById("myChart").getContext("2d");
-  
-  //   myChart = new Chart(ctx, {
-  //     type: 'line',
-  //       data: {
-  //         labels,
-  //         datasets: [{
-  //             label: "Total Over Time",
-  //             fill: true,
-  //             backgroundColor: "#6666ff",
-  //             data
-  //         }]
-  //     }
-  //   });
-  //   // setChart(chart);
-  // }
 
   //function to add or subtract funds
   const addBtn = (isAdding) => {
@@ -142,9 +97,6 @@ const Budget = () => {
   return (
     <div className="wrapper">
       <div className="total">
-        {/* <div className="total">
-          Your total is: $<span id="total">0</span>
-        </div> */}
         <Total />
       </div>
 
@@ -153,6 +105,7 @@ const Budget = () => {
           type="text"
           id="t-name"
           onChange={(e) => {
+            // e.preventDefault();
             setTName(e.target.value);
           }}
           placeholder="Name of transaction"
@@ -162,6 +115,7 @@ const Budget = () => {
           min="0"
           id="t-amount"
           onChange={(e) => {
+            // e.preventDefault();
             setAmount(e.target.value);
           }}
           placeholder="Transaction amount"
@@ -196,11 +150,10 @@ const Budget = () => {
           <tbody id="tbody"></tbody>
         </table>
       </div>
-
-      {/* <canvas id="myChart"></canvas> */}
-      {/* <BudgetChart /> */}
+      <div>
+      <BudgetChart />
+      </div>
       
-
     </div>
   );
 };

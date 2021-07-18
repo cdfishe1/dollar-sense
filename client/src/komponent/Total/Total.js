@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-// import { Line } from 'react-chartjs-2';
 import { auth } from "../../Firebase";
 
 const Total = () => {
@@ -11,15 +10,11 @@ const Total = () => {
             return response.json();
             })
             .then(
-
             (data) => {
-                // save db data on global variable
-                transactions = data;
-                populateTotal();
-            },
-            []
-            );
-
+            // save db data on global variable
+            transactions = data;
+            populateTotal();
+            },[]);
     });
 
     function populateTotal() {
