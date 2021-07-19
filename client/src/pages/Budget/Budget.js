@@ -11,7 +11,6 @@ const Budget = () => {
   let transactions = useRef();
   
   useEffect(() => {
-    // const abortCont = new AbortController();
     fetch(`/api/transaction/${auth.currentUser.uid}`)
       .then((response) => {
         return response.json();
@@ -27,29 +26,6 @@ const Budget = () => {
         });
 
   }, []);
-
- 
-
-  //poplulate total in DOM
-  // function populateTotal() {
-  //   // reduce transaction amounts to a single total value
-    
-  //   let total = transactions.reduce((total, t) => {
-  //     return total + parseInt(t.value);
-  //   }, 0);
-
-  //   let totalEl = document.querySelector("#total");
-
-
-  //   totalEl.textContent = total;
-
-
-  //   if (totalEl.innerHTML >= 0) {
-  //     totalEl.style.color = "#74c69d"
-  //   } else {
-  //     totalEl.style.color = "crimson"
-  //   }
-  // }
 
   //create table of budget data
   function populateTable() {
