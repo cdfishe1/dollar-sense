@@ -1,7 +1,8 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { auth } from "../../Firebase";
 
 const Total = () => {
+    const [totalBudget, setTotalBudget] = useState("");
     let transactions = useRef();
 
     useEffect(() => {
@@ -13,8 +14,9 @@ const Total = () => {
             (data) => {
             // save db data on global variable
             transactions = data;
+            setTotalBudget(transactions)
             populateTotal();
-            },[]);
+            },[totalBudget]);
     });
 
     function populateTotal() {
