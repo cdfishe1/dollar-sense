@@ -63,7 +63,7 @@ That dashboard will have 3 tabs or views for goal setting, budgeting, and invest
 ### Screencast on wide screen
 
 ### Screencast on mobile
-![Screencast on mobile](./client/public/assets/video.gif)
+![Screencast on mobile](./client/public/assets/video2.gif)
 
 ## Deployment
 
