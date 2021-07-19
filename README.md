@@ -62,13 +62,18 @@ This app uses the following dependencies:
 - [bootstrap](https://www.npmjs.com/package/bcrypt)
 - [chart.js](https://www.npmjs.com/package/chart.js)
 - [dotenv](https://www.npmjs.com/package/dotenv)
+- [emoji-picker-react](https://www.npmjs.com/package/emoji-picker-react)
 - [express](https://www.npmjs.com/package/express)
 - [firebase](https://www.npmjs.com/package/firebase)
 - [if-env](https://www.npmjs.com/package/if-env)
+- [mdb-react-ui-kit](https://www.npmjs.com/package/mdb-react-ui-kit)
+- [moment](https://www.npmjs.com/package/moment)
 - [mongoose](https://www.npmjs.com/package/mongoose)
 - [react](https://www.npmjs.com/package/react)
+- [react-chartjs-2](https://www.npmjs.com/package/react-chartjs-2)
 - [react-dom](https://www.npmjs.com/package/react-dom)
 - [react icons](https://www.npmjs.com/package/react-icons)
+- [react-moment](https://www.npmjs.com/package/react-moment)
 - [react-router-dom](https://www.npmjs.com/package/react-router-dom)
 - [react-script-tag](https://www.npmjs.com/package/react-script-tag)
 - [react-scripts](https://www.npmjs.com/package/react-scripts)
@@ -87,8 +92,14 @@ This app uses the following dependencies:
 - Responsiveness of images within Bootstrap cards were challenging at almost all levels of responsiveness. Ultimately left images for desktop/iPad views, but eliminated them on smaller views. 
 - There were issues with using the .env file to hide our API key. We used the file to hide a handful of other personal keys as it relates to our Firebase Auth implementation, but for some reason the API key could not be read. It had to be inserted directly into the file for the connection to Firebase to work.
 - Once a user signs up, there is a specific UID that Firebase assigns to the user. It was challenging to work through how to access the UID in the routes file in order to display the user specific budget/goals. Instead of doing it in the routes file, we ended up making our API calls within the component that alleviated the issue as well as passing that UID as a query parameter helped us achieve our goal.
+- Getting chart.js to was challenging. We needed to use react-chartjs-2 in order to wrap the components in a react friendly way.
+- We are proud to have built this entire site on React.
 
 ## Directions for Future Development
+
+- Have different levels of support and resources based on age.
+- Have an investing tutorial and calculator for young, working adults.
+- Integrate existing financial services into calculations, such as bank accounts, investment accounts, etc.
 
 ## Special Thanks
 
