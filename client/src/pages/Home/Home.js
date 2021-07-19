@@ -11,7 +11,7 @@ const Home = () => {
         <div className="col-7">
           <h1 id="homeIntro">Take Control of Your Money</h1>
           <p>
-            <i>Welcome, we know financial literacy isn't something that it taught in schools. With dollarSense we hope to help you budget, save, and learn. We think the earlier you learn the fundamentals, you'll be better off when you make those financial decisions later.   </i>
+            <i>Welcome, we know financial literacy isn't something that is taught in schools. With dollarSense we hope to help you budget, save, and learn. We think the earlier you learn the fundamentals, you'll be better off when you make those financial decisions later.   </i>
           </p>
         </div>
         {/* <div className="col-4">
