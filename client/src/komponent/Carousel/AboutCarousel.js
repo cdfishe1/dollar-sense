@@ -3,7 +3,6 @@ import Carousel from 'react-bootstrap/Carousel'
 import Container from 'react-bootstrap/Container';
 import "./style.css";
 import { Link } from "react-router-dom";
-// import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const AboutCarousel = () => {
@@ -47,10 +46,6 @@ const AboutCarousel = () => {
     </Link>
   </Carousel.Item>
   
-  
-  
-  
-  
   <Carousel.Item>
   <Link to ="/Goals">
     <img
@@ -71,11 +66,7 @@ const AboutCarousel = () => {
   
 </Carousel>
 </Container>
-   
-
   )
-  
-  
 }
 
 export default AboutCarousel;

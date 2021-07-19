@@ -29,6 +29,7 @@ const Total = () => {
         let totalEl = document.querySelector("#total");
         totalEl.textContent = total;
     
+        //if total 0 or greater green else red
         if (totalEl.innerHTML >= 0) {
             totalEl.style.color = "#74c69d"
         } else {

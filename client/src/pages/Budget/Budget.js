@@ -11,6 +11,7 @@ const Budget = () => {
   let transactions = useRef();
   
   useEffect(() => {
+
     fetch(`/api/transaction/${auth.currentUser.uid}`)
       .then((response) => {
         return response.json();
@@ -81,7 +82,7 @@ const Budget = () => {
           type="text"
           id="t-name"
           onChange={(e) => {
-            // e.preventDefault();
+            
             setTName(e.target.value);
           }}
           placeholder="Name of transaction"
@@ -91,7 +92,7 @@ const Budget = () => {
           min="0"
           id="t-amount"
           onChange={(e) => {
-            // e.preventDefault();
+            
             setAmount(e.target.value);
           }}
           placeholder="Transaction amount"
