@@ -47,9 +47,23 @@ That dashboard will have 3 tabs or views for goal setting, budgeting, and invest
 
 ## dollarSense Demos
 
+| ***Homepage***                                        | ***About Page***                                      |
+| :--------------------------------:                    | :-----------------------------------:                 |
+| <img src="./client/public/assets/homepage.png">       | <img src="./client/public/assets/aboutpage.png">      |
+
+| ***Learing Page***                                    | ***Budget Page***                                     |
+| :--------------------------------:                    | :-----------------------------------:                 |
+| <img src="./client/public/assets/learningpage.png">   | <img src="./client/public/assets/budgetpage.png">     | 
+
+| ***Goals Page***                                      | ***Dashboard Page***                                  |
+| :--------------------------------:                    | :-----------------------------------:                 |
+| <img src="./client/public/assets/goalspage.png">      | <img src="./client/public/assets/dashboardpage.png">  | 
+
+
 ### Screencast on wide screen
 
 ### Screencast on mobile
+![Screencast on mobile](./client/public/assets/video.gif)
 
 ## Deployment
 
