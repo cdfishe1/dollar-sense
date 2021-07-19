@@ -30,6 +30,7 @@
     "firebase": "^8.6.8",
     "if-env": "^1.0.4",
     "materialize-css": "^1.0.0-rc.2",
+    "mdb-react-ui-kit": "^1.1.0",
     "moment": "^2.29.1",
     "mongoose": "^5.12.14",
     "react-bootstrap": "^1.6.1",
