@@ -39,9 +39,6 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard">
-      {/* <h1>Here's your data</h1>
-      <Card>
-        <Card.Body> */}
       <h1 className="dashTitle text-center mb-4">
         Welcome, {currentUser.email} !
       </h1>

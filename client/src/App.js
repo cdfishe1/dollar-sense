@@ -10,16 +10,9 @@ import Signup from "./komponent/Signup/Signup";
 import Login from "./komponent/Login/Login";
 import ForgotPassword from "./komponent/Forgotpass/ForgotPassword";
 import PrivateRoute from "./komponent/PrivateRoute";
-
 import Navbar from "./komponent/Navbar/_Navbar";
-// import Footer from "./komponent/Footer/footer2"
-
-
 import "bootstrap/dist/css/bootstrap.min.css";
-
-import logo from "./logo.svg";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-
 import "./App.css";
 import { AuthProvider } from "./contexts/Authcontext";
 
@@ -41,18 +34,10 @@ function App() {
             <Route path="/about" component={About} />
             <PrivateRoute path="/budget" component={Budget} />
             <Route path="/invest" component={Invest} />
-
-
             <Route path="/learning" component={Learning} />
-
             <PrivateRoute path="/goals" component={Goals} />
-
-
-            
           </Switch>
-          
         </AuthProvider>
-        {/* <Footer /> */}
       </Router>
     </div>
   );

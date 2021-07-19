@@ -1,12 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Card, Container } from "react-bootstrap";
 import "./style.css";
 import { FaTimes } from "react-icons/fa";
 import moment from "moment"
 
 const Goals = ({ id, title, emoji, amount, saveBy, onDelete }) => {
-  const [savedDate, setSavedDate]= useState(saveBy)
- 
   
   const formatDate =  (date) => {
     let convertedDate =  `${new Date(date).getMonth() + 1}/${
@@ -16,15 +14,11 @@ const Goals = ({ id, title, emoji, amount, saveBy, onDelete }) => {
     return convertedDate;
   };
 
-  // useEffect(() => {
-  //   daysLeftToSave();
-  // }, []);
 
   const daysLeftToSave = () => {
     let x = moment(saveBy)
     let currentDate = moment()
     let daysLeft = (x.diff(currentDate,"days")) + 2
-    console.log(daysLeft);
     return daysLeft
   };
 
