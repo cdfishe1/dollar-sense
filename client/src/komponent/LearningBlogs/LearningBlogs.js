@@ -10,13 +10,13 @@ const LearningBlogs = () => {
 
   <div className="col">
     <div className="card">
-    <a className="card-link" href="https://www.nerdwallet.com/article/finance/raise-credit-score-fast"/>
-      <img src="/assets/paybills.jpg" className="card-img-top" alt="..."/>
-      <div className="card-body">
-      <h5 className="card-title"><a className="bTitle" href="https://www.nerdwallet.com/article/finance/raise-credit-score-fast">Pay bills on time</a></h5>
-        <p className="card-text">Payment history is the single biggest factor that affects credit scores, and late payments can stay on your credit reports for 7½ years.</p>
+      <a className="card-link" href="https://www.nerdwallet.com/article/finance/raise-credit-score-fast"/>
+        <img src="/assets/paybills.jpg" className="card-img-top" alt="..."/>
+        <div className="card-body">
+        <h5 className="card-title"><a className="bTitle" href="https://www.nerdwallet.com/article/finance/raise-credit-score-fast">Pay bills on time</a></h5>
+          <p className="card-text">Payment history is the single biggest factor that affects credit scores, and late payments can stay on your credit reports for 7½ years.</p>
+        </div>
       </div>
-    </div>
   </div>
 
 
