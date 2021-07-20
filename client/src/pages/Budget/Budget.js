@@ -1,121 +1,56 @@
-import React, { useState, useEffect, useRef } from "react";
+//The dollarSense team is grateful for the help of Radomir Fugiel for his coding input and guidance in getting our budget page working!
+
+import React, { useState, useEffect } from "react";
 import "./budget.css";
 import { auth } from "../../Firebase";
-import Total from '../../komponent/Total/Total'
 import BudgetChart from '../../komponent/Chart/BudgetChart'
+import BudgetButtons from "../../komponent/BudgetButtons/BudgetButtons";
+
 
 const Budget = () => {
-  const [tName, setTName] = useState("");
-  const [amount, setAmount] = useState(0.0);
-  // const [allTransactions, setTransactions] = useState("");
-  let transactions = useRef();
+  
+  const [transactions, setTransactions] = useState([]);
   
   useEffect(() => {
 
+    fetchAndUpdateTransactions();
+
+  }, []);
+
+
+  const fetchAndUpdateTransactions = () => {
     fetch(`/api/transaction/${auth.currentUser.uid}`)
       .then((response) => {
         return response.json();
       })
       .then(
-
-        (data) => {
-          // save db data on global variable
-          transactions = data;
-          // setTransactions(transactions);
-          populateTable();
-          
-        });
-
-  }, []);
-
-  //create table of budget data
-  function populateTable() {
-    let tbody = document.querySelector("#tbody");
-    tbody.innerHTML = "";
-
-    transactions.forEach((transaction) => {
-      // create and populate a table row
-      let tr = document.createElement("tr");
-      tr.innerHTML = `
-      <td>${transaction.name}</td>
-      <td>${transaction.value}</td>
-    `;
-
-      tbody.appendChild(tr);
-    });
-  }
+      (data) => {
+      setTransactions(data);
+      });
+}
 
 
-  //function to add or subtract funds
-  const addBtn = (isAdding) => {
-    let transaction = {
-      name: tName,
-      value: amount,
-      userID: auth.currentUser.uid,
-      date: new Date().toISOString(),
-    };
 
-    if (!isAdding) {
-      transaction.value *= -1;
-    }
+const onBtnClick = () => {
 
-    fetch("/api/transaction", {
-      method: "POST",
-      body: JSON.stringify(transaction),
-      headers: {
-        Accept: "application/json, text/plain, */*",
-        "Content-Type": "application/json",
-      },
-    }).then((response) => {
-      return response.json();
-    })
-  };
+  fetchAndUpdateTransactions();
+}
+
+const calculateTotal = (x) => {
+  return x.reduce((total, t) => {
+    return total + parseInt(t.value);
+}, 0);
+}
 
   return (
     <div className="wrapper">
       <div className="total">
-        <Total />
-      </div>
+          Your total is: $<span id="total">{calculateTotal(transactions)}</span>
+          {/* <Total onBtnClick={onBtnClick} /> */}
+        </div>
+      <BudgetButtons onBtnClick={onBtnClick}/>
 
-      <div className="form">
-        <input
-          type="text"
-          id="t-name"
-          onChange={(e) => {
-            
-            setTName(e.target.value);
-          }}
-          placeholder="Name of transaction"
-        />
-        <input
-          type="number"
-          min="0"
-          id="t-amount"
-          onChange={(e) => {
-            
-            setAmount(e.target.value);
-          }}
-          placeholder="Transaction amount"
-        />
-        <br></br>
-        <button
-          id="add-btn"
-          onClick={() => {
-            addBtn(true);
-          }}
-        >
-          <i className="fa fa-plus buttons"></i> Add Funds
-        </button>
-        <button id="sub-btn"
-        onClick={() => {
-          addBtn(false);
-        }}
-        >
-          <i className="fa fa-minus"></i> Subtract Funds
-        </button>
-        <p className="error"></p>
-      </div>
-
+      
       <div className="transactions">
         <table>
           <thead>
@@ -124,11 +59,20 @@ const Budget = () => {
               <th>Amount</th>
             </tr>
           </thead>
-          <tbody id="tbody"></tbody>
+          <tbody id="tbody">
+
+          {transactions.map( (item,i) => {
+            return(
+            <tr key={i}>
+             <td>{item.name}</td>
+             <td>${item.value}</td>
+             </tr>
+          )})}
+          </tbody>
         </table>
       </div>
       <div>
-      <BudgetChart />
+      <BudgetChart transactions={transactions}/>
       </div>
       
     </div>

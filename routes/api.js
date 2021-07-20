@@ -14,7 +14,7 @@ router.post("/api/transaction", ({ body }, res) => {
     });
 });
 
-//define budget rout to get specific user transaction
+//define budget route to get specific user transaction
 router.get("/api/transaction/:id", (req, res) => {
   const { id } = req.params;
   Transaction.find({ userID: id })

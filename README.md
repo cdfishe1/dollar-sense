@@ -51,7 +51,7 @@ That dashboard will have 3 tabs or views for goal setting, budgeting, and invest
 | :--------------------------------:                    | :-----------------------------------:                 |
 | <img src="./client/public/assets/homepage.png">       | <img src="./client/public/assets/aboutpage.png">      |
 
-| ***Learing Page***                                    | ***Budget Page***                                     |
+| ***Learning Page***                                    | ***Budget Page***                                     |
 | :--------------------------------:                    | :-----------------------------------:                 |
 | <img src="./client/public/assets/learningpage.png">   | <img src="./client/public/assets/budgetpage.png">     | 
 
@@ -118,6 +118,7 @@ This app uses the following dependencies:
 ## Special Thanks
 
 - Irwin Marcano, bootcamp TA, helped us diagnose external javascript issues in React.
+- Radomir Fugiel, bootcamp TA, helped us understand how to render the budget page chart correctly.
 
 ## License
 

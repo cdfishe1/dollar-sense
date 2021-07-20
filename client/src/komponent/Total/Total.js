@@ -1,45 +1,39 @@
-import React, { useEffect, useRef, useState } from 'react';
+//The dollarSense team is grateful for the help of Radomir Fugiel for his coding input and guidance in getting our budget page working!
+import React, { useEffect, useState } from 'react';
 import { auth } from "../../Firebase";
 
 const Total = () => {
-    const [totalBudget, setTotalBudget] = useState("");
-    let transactions = useRef();
+    
+    const [transactions, setTransactions] = useState([]);
+  
+  useEffect(() => {
 
-    useEffect(() => {
-        fetch(`/api/transaction/${auth.currentUser.uid}`)
-            .then((response) => {
-            return response.json();
-            })
-            .then(
-            (data) => {
-            // save db data on global variable
-            transactions = data;
-            setTotalBudget(transactions)
-            populateTotal();
-            },[totalBudget]);
+    fetchAndUpdateTransactions();
+
+  }, []);
+
+
+  const fetchAndUpdateTransactions = () => {
+    fetch(`/api/transaction/${auth.currentUser.uid}`)
+      .then((response) => {
+        return response.json();
+      })
+      .then(
+      (data) => {
+          console.log('total.js, 25', data)
+      setTransactions(data);
     });
+  }
+    
+         
+    let total = transactions.reduce((total, t) => {
+        return total + parseInt(t.value);
+    }, 0);
 
-    function populateTotal() {
-        // reduce transaction amounts to a single total value
         
-        let total = transactions.reduce((total, t) => {
-            return total + parseInt(t.value);
-        }, 0);
-    
-        let totalEl = document.querySelector("#total");
-        totalEl.textContent = total;
-    
-        //if total 0 or greater green else red
-        if (totalEl.innerHTML >= 0) {
-            totalEl.style.color = "#74c69d"
-        } else {
-            totalEl.style.color = "crimson"
-        }
-        }
-    
     return (
         <div className="total">
-          Your total is: $<span id="total">0</span>
+          Your total is: $<span id="total">{total}</span>
         </div>
     )
 }
