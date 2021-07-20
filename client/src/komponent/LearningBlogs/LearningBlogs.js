@@ -19,7 +19,6 @@ const LearningBlogs = () => {
       </div>
   </div>
 
-
   <div className="col">
     <div className="card">
     <a className="card-link" href="https://www.investopedia.com/articles/00/082100.asp"/>
@@ -30,8 +29,6 @@ const LearningBlogs = () => {
       </div>
     </div>
   </div>
-
-
 
   <div className="col">
     <div className="card">
@@ -44,7 +41,6 @@ const LearningBlogs = () => {
     </div>
   </div>
 
-
   <div className="col">
     <div className="card">
     <a className="card-link" href="https://www.timeforpayback.com/"/>
@@ -55,7 +51,6 @@ const LearningBlogs = () => {
       </div>
     </div>
   </div>
-
 
 <div className="col">
     <div className="card">
@@ -68,7 +63,6 @@ const LearningBlogs = () => {
     </div>
   </div>
 
-
   <div className="col">
     <div className="card">
     <a className="card-link" href="https://www.investopedia.com/best-finance-books-for-teens-5095590"/>
@@ -80,7 +74,6 @@ const LearningBlogs = () => {
     </div>
   </div>
 
-
   <div className="col">
     <div className="card">
     <a className="card-link" href="https://www.moneyprodigy.com/money-books-for-kids/"/>
@@ -91,7 +84,6 @@ const LearningBlogs = () => {
       </div>
     </div>
   </div>
-
 
  <div className="col">
     <div className="card">
@@ -105,11 +97,8 @@ const LearningBlogs = () => {
     </div>
   </div>
 
-
 </div>
-
-
-    )
+)
 }
 
 export default LearningBlogs
