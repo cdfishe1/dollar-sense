@@ -45,32 +45,32 @@ const calculateTotal = (x) => {
   return (
     <div className="wrapper">
       <div className="total">
+        <h1>
           Your total is: $<span id="total">{calculateTotal(transactions)}</span>
-          {/* <Total onBtnClick={onBtnClick} /> */}
+          </h1>
         </div>
-      <BudgetButtons onBtnClick={onBtnClick}/>
+        <BudgetButtons onBtnClick={onBtnClick}/>
 
-      
-      <div className="transactions">
-        <table>
-          <thead>
-            <tr>
-              <th>Transaction</th>
-              <th>Amount</th>
-            </tr>
-          </thead>
-          <tbody id="tbody">
+        <div className="transactions">
+          <table>
+            <thead>
+              <tr>
+                <th>Transaction</th>
+                <th>Amount</th>
+              </tr>
+            </thead>
+            <tbody id="tbody">
 
-          {transactions.map( (item,i) => {
-            return(
-            <tr key={i}>
-             <td>{item.name}</td>
-             <td>${item.value}</td>
-             </tr>
-          )})}
-          </tbody>
-        </table>
-      </div>
+            {transactions.map( (item,i) => {
+              return(
+              <tr key={i}>
+              <td>{item.name}</td>
+              <td>${item.value}</td>
+              </tr>
+            )})}
+            </tbody>
+          </table>
+        </div>
       <div>
       <BudgetChart transactions={transactions}/>
       </div>
