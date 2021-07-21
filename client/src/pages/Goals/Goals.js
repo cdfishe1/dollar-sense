@@ -12,19 +12,10 @@ const Goals = () => {
   const [goalEmoji, setGoalEmoji] = useState("");
   const [isLoading, setLoading] = useState(false);
   const [goals, setGoals] = useState([]);
-  
 
   useEffect(() => {
     getAllGoals();
   }, [goals]);
-
-  const newGoalBtn = () => {
-    console.log("checkingBtn");
-    setGoalName("");
-    setGoalAmount(0.0);
-    setSaveByDate("");
-    setChosenEmoji(null);
-  };
 
   const onEmojiClick = (e, emojiObject) => {
     setChosenEmoji(emojiObject);
@@ -81,7 +72,6 @@ const Goals = () => {
 
   return (
     <div className="goals">
-
       <div>
         {goals && (
           <h1 className="container" id="goalsPageTitle">
@@ -112,9 +102,6 @@ const Goals = () => {
         <div className="container text-center">
           <button
             type="button"
-            onClick={() => {
-              newGoalBtn();
-            }}
             className="addGoalBtn"
             data-toggle="modal"
             data-target="#addGoalModal"

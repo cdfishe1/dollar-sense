@@ -4,8 +4,8 @@ import { Card, Button, Alert, Container } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import { auth } from "../../Firebase";
 import "./style.css";
-import LearningBlogs from "../../komponent/Blogs/Blogs";
-import Total from "../../komponent/Total/Total"
+import Blogs from "../../komponent/Blogs/Blogs";
+import Total from "../../komponent/Total/Total";
 
 const Dashboard = () => {
   const [error, setError] = useState("");
@@ -17,6 +17,7 @@ const Dashboard = () => {
     getAllGoals();
   }, [goals]);
 
+  //on page load retrieve all of the user specific goals in the DB to display
   const getAllGoals = () => {
     fetch(`/api/all-goals/${auth.currentUser.uid}`)
       .then((response) => response.json())
@@ -80,7 +81,7 @@ const Dashboard = () => {
         </h3>
 
         <div>
-          <LearningBlogs />
+          <Blogs />
         </div>
       </div>
       <div className="w-100 text-center mt-2">

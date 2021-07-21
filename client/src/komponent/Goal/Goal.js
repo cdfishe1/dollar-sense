@@ -6,6 +6,7 @@ import moment from "moment"
 
 const Goals = ({ id, title, emoji, amount, saveBy, onDelete }) => {
   
+  //formats the date from greenwich mean time to local time for the user
   const formatDate =  (date) => {
     let convertedDate =  `${new Date(date).getMonth() + 1}/${
       new Date(date).getDate() + 1
@@ -14,7 +15,7 @@ const Goals = ({ id, title, emoji, amount, saveBy, onDelete }) => {
     return convertedDate;
   };
 
-
+//calculates the different between the save by date for the goal in the database from the current date
   const daysLeftToSave = () => {
     let x = moment(saveBy)
     let currentDate = moment()
