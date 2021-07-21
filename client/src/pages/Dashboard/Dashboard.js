@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useAuth } from "../../contexts/Authcontext";
-import { Card, Button, Alert, Container } from "react-bootstrap";
+import { Card, Button, Alert } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import { auth } from "../../Firebase";
 import "./style.css";
@@ -12,6 +12,7 @@ const Dashboard = () => {
   const { currentUser, logout } = useAuth();
   const history = useHistory();
   const [goals, setGoals] = useState([]);
+  
 
   useEffect(() => {
     getAllGoals();
