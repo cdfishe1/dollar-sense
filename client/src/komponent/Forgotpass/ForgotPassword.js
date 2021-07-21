@@ -3,7 +3,7 @@ import { Card, Form, Alert, Container } from "react-bootstrap";
 import { useAuth } from "../../contexts/Authcontext";
 import { Link } from "react-router-dom";
 import "./style.css";
-import Header from "../Header/Header";
+
 
 const ForgotPassword = () => {
   const emailRef = useRef();
@@ -29,7 +29,6 @@ const ForgotPassword = () => {
 
   return (
     <div>
-      <Header />
       <Container
         className="d-flex align-items-center justify-content-center forgotPasswordPage"
         style={{ minHeight: "100vh" }}

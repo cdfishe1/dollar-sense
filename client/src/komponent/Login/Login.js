@@ -3,7 +3,6 @@ import { Card, Form, Alert, Container } from "react-bootstrap";
 import { useAuth } from "../../contexts/Authcontext";
 import { Link, useHistory } from "react-router-dom";
 import "./style.css";
-import Header from "../Header/Header";
 import { auth } from "../../Firebase";
 
 const Login = () => {
@@ -32,7 +31,6 @@ const Login = () => {
 
   return (
     <div>
-      <Header />
       <Container
         className="d-flex align-items-center justify-content-center loginPage"
         style={{ minHeight: "100vh" }}
