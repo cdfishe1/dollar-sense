@@ -23,7 +23,6 @@ const Login = () => {
       setLoading(true);
       await login(emailRef.current.value, passwordRef.current.value);
       const token = auth.uid;
-      console.log(token);
       history.push("/dashboard");
     } catch {
       setError("Failed to sign in!");

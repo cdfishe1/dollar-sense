@@ -14,6 +14,7 @@ export function AuthProvider({ children }) {
     return auth.createUserWithEmailAndPassword(email, password);
   }
 
+  //firebase authorizers user for login 
   function login(email, password) {
     return auth.signInWithEmailAndPassword(email, password);
   }
@@ -21,7 +22,7 @@ export function AuthProvider({ children }) {
   function logout() {
     return auth.signOut();
   }
-
+//if user clicks forgot password, authorizers user info in firebase and sends link to reset
   function resetPassword(email) {
     return auth.sendPasswordResetEmail(email);
   }
@@ -35,6 +36,7 @@ export function AuthProvider({ children }) {
     return unsubscribe;
   }, []);
 
+  //variable instantiated to pass user info to authcontext.provider file
   const value = {
     currentUser,
     login,
