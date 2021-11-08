@@ -20,7 +20,7 @@ const Total = () => {
       })
       .then(
       (data) => {
-          console.log('total.js, 25', data)
+          
       setTransactions(data);
     });
   }
